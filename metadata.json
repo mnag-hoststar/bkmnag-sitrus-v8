@@ -167,7 +167,7 @@
             "color__header--border" : "#e6e6e6"
         },
         "footer": {
-            "color__footer--background" : "#203b4c",
+            "color__footer--background" : "#1e2b2f",
             "color__footer--border" : "#fff"
         },
         "navigation": {

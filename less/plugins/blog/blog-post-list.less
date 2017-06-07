@@ -54,9 +54,10 @@
 
 .blogpostlist__post-article {
 	position: relative;
-	border-bottom: 1px dotted @color__p--text;
-	padding-bottom: 80px;
+	border: 1px solid fade(@color__form--border, 20%);
 	margin-bottom: 50px;
+	.form-widget-background--spacing();
+	.border-radius(5px);
 	//.clearfix();
 	
 	@media @mobile {
@@ -74,8 +75,7 @@
         position: relative;
         overflow: hidden;
         height: 0;
-		padding-bottom: 40%;
-		.border-radius(5px);
+		padding-bottom: 300px;
     }
 	
     &__image-link {
@@ -133,7 +133,6 @@ a.blogpostlist__title-link {
 // Read more
 
 a.blogpostlist__read-more {
-	float: left;
 	margin-top: 1em;
 }
 
@@ -147,7 +146,6 @@ a.blogpostlist__read-more {
 // ------------------------------
 
 .blogpostlist__post-footer {
-	float: right;
 
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);

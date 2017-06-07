@@ -121,17 +121,28 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 
 .template__footer {
-    width: 100%;
     background-color: @color__footer--background;
-    text-align: center;
     border-top: 10px solid @color__footer--border;
-    padding: 2em 0;
+    padding: 4em 0;
 	.footer-border-removal()
 	.container {
 	}
 	// Widget
 	h1, h2, h3, h4, h5, p, .profile a {
 		color: white;
+		padding-bottom: 1em;
+	}
+	.profile p {
+		padding-bottom: .5em;
+	}
+	.footerleft, 
+	.footerright {
+		display: inline-block;
+		vertical-align: top;
+	}
+	.footerleft {
+		width: 24%;
+		margin-right: 1%;
 	}
 }
 
