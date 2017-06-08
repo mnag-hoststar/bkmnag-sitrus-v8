@@ -25,7 +25,6 @@
 		-webkit-flex: 5;
 		-ms-flex: 5;  
 	    flex: 5;
-	    padding: 1.5em 0;
 	    z-index: 3;
 	}
 	
@@ -38,6 +37,14 @@
 .logo {
 	padding-right: 10px;
     font-size: 0;
+    margin: 10px;
+    margin-left: 0;
+
+    @media @tablet {
+    	margin: 20px;
+    	margin-left: 0;
+    	padding-right: 0;
+    }
 	
 	&__logo-image {
 	}
