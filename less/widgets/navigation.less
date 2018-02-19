@@ -22,9 +22,9 @@
     margin: 0;
 	
 	@media @tablet {
-		-webkit-flex: 5;
-		-ms-flex: 5;  
-	    flex: 5;
+		-webkit-flex: 2;
+		-ms-flex: 2;  
+	    flex: 2;
 	    z-index: 3;
 	}
 	
@@ -35,18 +35,12 @@
 }
 
 .logo {
-	padding-right: 10px;
+	padding-right: 15px;
     font-size: 0;
-    margin: 10px;
     margin-left: 0;
-
-    @media @tablet {
-    	margin: 20px;
-    	margin-left: 0;
-    	padding-right: 0;
-    }
 	
 	&__logo-image {
+	    min-width: 40px;
 	}
 }
 
@@ -58,7 +52,6 @@
 		font-family: @font__companyname--font-family;
 		font-size: @font__companyname--font-size;
 		font-weight: @font__companyname--font-weight;
-		line-height: @font__companyname--line-height;
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 
@@ -86,6 +79,7 @@ html.nav-open {
 	-webkit-flex: 2;
 	-ms-flex: 2; 
     flex: 2;
+    
     @media @tablet {
 		-webkit-flex: 1;
 		-ms-flex: 1;   
@@ -100,12 +94,8 @@ html.nav-open {
 		
 	}
 	@media @tablet {
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
 		z-index: 2;
+		position: static;
 	}
 }
 
@@ -118,38 +108,45 @@ html.nav-open {
 
 .navigation-toggle {
 	display: none;
+	&:hover {
+	    background-color: transparent;
+	}
 	
 	@media @tablet {
-		
-		// Displays as Icon's Middle Bar
+	    position: relative;
 		z-index: 100;
 		cursor: pointer;
-		background: @color__navigation--text;
+		text-align: right;
+        width: 100%;
+		background: transparent;
 		background-clip: content-box;
-		width: 28px;
-		height: 3px;
-		padding: 0;
+		padding: 0 40px 0 0;
 		display: block;
-		position: absolute;
-		top: 12px;
-		right: 1em;
-		margin: 28px 20px;
-		font-size: 26px;
-		text-indent: 10000px;
 		.transition(background, 0s, ease-in, 0.05s);
-
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
 		.make-font-a-lot-smaller(@font__companyname--font-size);
+	    
+	    & span {
+	        font-size: inherit;
+	        text-indent: 0;
+    		font-family: @font__navigation--font-family;
+    		font-size: @font__navigation--font-size;
+    		font-weight: @font__navigation--font-weight;
+    		line-height: @font__navigation--line-height;
+    		letter-spacing: @font__navigation--letter-spacing;
+    		text-transform: uppercase;
+	    }
 
 		// Top and Bottom Navigation Item Bar
 
 		&:after,
 		&:before {
 			content: "";
+			position: absolute;
+			right: 0;
 			height: 3px;
 			width: 28px;
-			position: absolute;
 			display: block;
 			background-color: @color__navigation--text;
 			margin-right: 0;
@@ -165,19 +162,19 @@ html.nav-open {
 		// Top Bar
 		
 		&:before {
-			top: 0.4em;
+			top: 56%;
 		  	.transition-property-2items(top, transform);
 		}
 
 		// Bottom Bar
 		
 		&:after {
-			bottom: 0.4em;
+			bottom: 54%;
 			.transition-property-2items(bottom, transform);
 		}
 
 		&:hover {
-			&, &:before, &:after {
+			&:before, &:after {
 				background-color: @color__navigation--text;
 			}
 		}
@@ -187,23 +184,20 @@ html.nav-open {
 
 	.open & {
 		@media @tablet {
-			
-			// Middle bar
-			
 			background: transparent;
 			
 			// Top and bottom bar
 			
 			&:before,
 			&:after {
-			  .transition-delay-2items(0s, 0.05s);
+    			top: 50%;
+    			right: 0;
+                .transition-delay-2items(0s, 0.05s);
 			}
 			
 			// Top Bar
 
 			&:before {
-				top: 0;
-				background: @color__navigation--text;
 				.transform-rotate(45deg);
 
 			}
@@ -211,8 +205,6 @@ html.nav-open {
 			// Bottom Bar
 
 			&:after {
-				bottom: 0;
-				background: @color__navigation--text;
 				.transform-rotate(-45deg);
 			}
 		}
@@ -226,6 +218,7 @@ html.nav-open {
 // Dark overlay on tablet and mobile.
 
 .navigation-body {
+    z-index: 2;
 	.transition(opacity, 0s);
 	
 	// This is only shown in Tablet and Mobile
@@ -240,15 +233,12 @@ html.nav-open {
 		// When Navigation is open
 
 		.open & {
+		    position: absolute;
+            left: 0;
+            right: 0;
 			display: block;
 			opacity: 1;
 			width: auto;
-			width: 100vw;
-			overflow: auto;
-			height: auto;
-			height: 100vh;
-			background-color: fade(@color__header--background, 90%);
-			.transition(opacity, 0.25s);
 		}
 	}
 }
@@ -262,11 +252,10 @@ html.nav-open {
 	margin: 0;
 	
     @media @tablet {
-		display: block;
-		height: auto;
-		max-width: 500px;
-		margin: 150px auto 0;
+		margin: 10px auto 0;
+		padding: 10px 0;
 		text-align: center;
+	    background-color: @color__header--background;
 	}
 }
 
