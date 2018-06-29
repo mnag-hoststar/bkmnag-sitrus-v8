@@ -134,7 +134,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 	// Widget
 	h1, h2, h3, h4, h5, p, .profile a {
-		color: white;
+		color: @color__footer--border;
 		padding-bottom: 1em;
 	}
 	.profile p {
@@ -159,6 +159,17 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 			margin-right: none;
 		}
 	}
+}
+
+.gdpr-footer {
+    background-color: @color__footer--background;
+    padding: 15px 0;
+    
+    a[class] {
+        padding: 0 10px;
+	    font-family: @font__navigation--font-family;
+		color: @color__footer--border;
+    }
 }
 
 // ------------------------------
