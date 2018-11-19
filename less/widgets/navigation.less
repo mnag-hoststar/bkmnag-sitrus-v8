@@ -151,8 +151,8 @@ html.nav-open {
 			background-color: @color__navigation--text;
 			margin-right: 0;
 			margin-left: 0;
-			.transition-duration-2items(0.05s, 0.05s);
-			.transition-delay-2items(0.05s, 0s);
+			.transition-duration(0.05s, 0.05s);
+			.transition-delay(0.05s, 0s);
 
 			@media @mobile {
 				height: 2px;
@@ -163,14 +163,14 @@ html.nav-open {
 		
 		&:before {
 			top: 56%;
-		  	.transition-property-2items(top, transform);
+		  	.transition-property(top, transform);
 		}
 
 		// Bottom Bar
 		
 		&:after {
 			bottom: 54%;
-			.transition-property-2items(bottom, transform);
+			.transition-property(bottom, transform);
 		}
 
 		&:hover {
@@ -192,7 +192,7 @@ html.nav-open {
 			&:after {
     			top: 50%;
     			right: 0;
-                .transition-delay-2items(0s, 0.05s);
+                .transition-delay(0s, 0.05s);
 			}
 			
 			// Top Bar
