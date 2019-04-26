@@ -152,8 +152,7 @@ html.nav-open {
 			background-color: @color__navigation--text;
 			margin-right: 0;
 			margin-left: 0;
-			.transition-duration(0.05s, 0.05s);
-			.transition-delay(0.05s, 0s);
+			.transition();
 
 			@media @mobile {
 				height: 2px;
@@ -235,6 +234,7 @@ html.nav-open {
 
 		.open & {
 		    position: absolute;
+			top: 100%;
             left: 0;
             right: 0;
 			display: block;
@@ -253,7 +253,7 @@ html.nav-open {
 	margin: 0;
 	
     @media @tablet {
-		margin: 10px auto 0;
+		margin: 0;
 		padding: 10px 0;
 		text-align: center;
 	    background-color: @color__header--background;
