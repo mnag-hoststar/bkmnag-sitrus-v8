@@ -108,6 +108,8 @@ html.nav-open {
 
 .navigation-toggle {
 	display: none;
+	overflow: hidden;
+	
 	&:hover {
 	    background-color: transparent;
 	}
@@ -415,7 +417,7 @@ html.nav-open {
 	// Selected Folder Item
 
 	&.selected .item-name {
-		color: @color__navigation--text--selected;
+		color: @color__navigation--text--hover;
 	}
 }
 
