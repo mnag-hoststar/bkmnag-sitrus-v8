@@ -20,14 +20,14 @@
 // is not the same as the Blog Article background.
 
 .blogpostlist-article-background--spacing() when not (@color__blogpostlist--background = @color__blogpostlist-article--background) {
-	padding: 2em 0;
+    padding: 2em 0;
 }
 
 // Conditional if the Blog Post List background 
 // is the same as the page background.
 
 .blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
-	padding: 1em 0;
+    padding: 1em 0;
 }
 
 // ------------------------------
@@ -35,17 +35,23 @@
 // ------------------------------
 
 .widget[data-name="blogpostlist"] {
-	background-color: @color__blogpostlist--background;
-	.blogpostlist-article-background--spacing();
-	.blogpostlist-widget-background--spacing();
+    background-color: @color__blogpostlist--background;
+    .blogpostlist-article-background--spacing();
+    .blogpostlist-widget-background--spacing();
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: transparent;
+    }
 }
 
 .blogpostlist__post-items {
-//	.inline-block-font-hack();
-//	.display-flex(flex);
-//	.flex-wrap(wrap);
-//	.align-items(stretch, stretch);
-//	.item--margin-size--border();
+//  .inline-block-font-hack();
+//  .display-flex(flex);
+//  .flex-wrap(wrap);
+//  .align-items(stretch, stretch);
+//  .item--margin-size--border();
 }
 
 // ------------------------------
@@ -53,17 +59,29 @@
 // ------------------------------
 
 .blogpostlist__post-article {
-	position: relative;
-	border: 1px solid fade(@color__form--border, 20%);
-	margin-bottom: 50px;
-	.form-widget-background--spacing();
-	.border-radius(5px);
-	//.clearfix();
-	
-	@media @mobile {
-		//.display-flex(flex);
-		//.flex-direction(inherit);
-	}
+    position: relative;
+    border: 1px solid fade(@color__form--border, 20%);
+    margin-bottom: 50px;
+    .form-widget-background--spacing();
+    .border-radius(5px);
+    //.clearfix();
+    
+    @media @mobile {
+        //.display-flex(flex);
+        //.flex-direction(inherit);
+    }
+
+    .style--light & {
+        border-color: darken(@color--light, 10%);
+    }
+
+    .style--accent & {
+        border-color: darken(@color--accent, 10%);
+    }
+
+    .style--dark & {
+        border-color: lighten(@color--dark, 12%);
+    }
 }
 
 // ------------------------------
@@ -75,9 +93,9 @@
         position: relative;
         overflow: hidden;
         height: 0;
-		padding-bottom: 300px;
+        padding-bottom: 300px;
     }
-	
+    
     &__image-link {
         background-position: center center;
         background-size: cover;
@@ -86,7 +104,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-		.transition(all, 0.3s);
+        .transition(all, 0.3s);
     }
 
     // Using the background image instead.
@@ -101,39 +119,75 @@
 // ------------------------------
 
 .blogpostlist__post-content {
-	width: 100%;
-	margin: 0;
+    width: 100%;
+    margin: 0;
 
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
+    .make-font-a-little-smaller(@font__p--font-size);
+    .make-font-smaller(@font__p--font-size);
+    .make-font-a-lot-smaller(@font__p--font-size);
 }
 
 .blogpostlist__post-title {
-	.heading--3;
-	padding: 0;
-	margin-top: 1em;
+    .heading--3;
+    padding: 0;
+    margin-top: 1em;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 a.blogpostlist__title-link {
-	//color: @color__h3--text;
+    //color: @color__h3--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // Post Excerpt
-	
+    
 .blogpostlist__post-excerpt {
 
 }
 
 .blogpostlist__post-excerpt p {
-	line-height: 1.5em;
-	color: lighten(@color__p--text, 8%);
+    line-height: 1.5em;
+    color: lighten(@color__p--text, 8%);
+
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
 }
 
 // Read more
 
 a.blogpostlist__read-more {
-	margin-top: 1em;
+    margin-top: 1em;
 }
 
 // This style only activates if the article has an image.
@@ -147,20 +201,20 @@ a.blogpostlist__read-more {
 
 .blogpostlist__post-footer {
 
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
+    .make-font-a-little-smaller(@font__p--font-size);
+    .make-font-smaller(@font__p--font-size);
+    .make-font-a-lot-smaller(@font__p--font-size);
 
-	.timestamp {
-		margin: 2em 0 0;
-		font-size: @font__p--font-size*0.8;
-	}
+    .timestamp {
+        margin: 2em 0 0;
+        font-size: @font__p--font-size*0.8;
+    }
 }
 
 // This style only activates if the article has an image.
 
 .blogpostlist__post-image ~ .blogpostlist__post-footer {
-	
+    
 }
 
 // ------------------------------
