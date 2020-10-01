@@ -27,7 +27,7 @@
 // is not the same as the page background.
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
-    padding: 2em;
+    padding: 2em!important;
 }
 
 // ------------------------------
@@ -74,6 +74,10 @@
     margin-bottom: 1em;
     color: @color__form-legend--text;
     background-color: transparent;
+
+    &:empty {
+        display: none;
+    }
 
     .style--light & {
         color: @contrast--light;

@@ -54,10 +54,10 @@
     // Replaces main padding by moving this to the first widget in the zone
     &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 2em;           // Main padding top
+        margin-top: 2em!important;           // Main padding top
 
         @media @mobile {
-            margin-top: 1em;
+            margin-top: 1em!important;
         }
     }
 
