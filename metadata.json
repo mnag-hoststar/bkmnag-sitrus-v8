@@ -116,7 +116,7 @@
     },
     "styles": {
         "colors": {
-            "color__primary": "@color-swatch2",
+            "color__primary": "@color-swatch1",
             "color__secondary": "@color-swatch3"
         },
         "site": {

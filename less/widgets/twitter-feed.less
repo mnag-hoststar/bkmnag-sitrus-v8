@@ -12,60 +12,12 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
-
-.twitter-body-background--spacing() when not (@color__twitter--background = @color__body--background) {
-	padding: 2em 0;
-}
-
-// Conditionals if the container background 
-// is the same as the item background.
-
-.twitter-widget-background--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	padding: 1em 0;
-}
-
-.twitter__avatar--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	margin: 0.5em 1em 0 0;
-}
-
-.twitter__avatar--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	margin: 0.5em 1em 0 0;
-}
-
-.twitter__account-link--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	padding: 0.5em 0 0;
-	min-height: 4.1em;
-}
-
-.tweet-content--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	padding: 1em 1em 4.5em 0;
-	
-	@media @mobile {
-		padding: 1em 1em 5em 0;
-	}
-}
-
-.tweet-metadata--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	padding: 1.5em 0;
-	
-	@media @mobile {
-		padding: 1.5em 0 2em;
-	}
-}
-
-// ------------------------------
 // #Twitter Widget Container
 // ------------------------------
 
 .widget[data-name="twitter"] {
 	.twitter-body-background--spacing();
 	.twitter-widget-background--spacing();
-	background-color: @color__twitter--background;
 }
 
 // ------------------------------
@@ -79,7 +31,6 @@
 .tweet-item {
 	position: relative;
 	padding: 0;
-	background-color: @color__twitter-item--background;
 	font-size: @font__p--font-size;
 	.clearfix();
 	
