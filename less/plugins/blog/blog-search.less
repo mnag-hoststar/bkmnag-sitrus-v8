@@ -22,6 +22,18 @@
 .widget[data-name="blogsearch"] {
 	.blogsearch-widget-background--spacing();
 	background-color: @color__blogsearch--background;
+
+	.style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
 .widget[data-name="blogsearch"] .blogsearch {
@@ -49,4 +61,19 @@
 	border: 1px solid fade(@color__form--border, 20%);
 	background: fade(@color__form--background, 7%);
 	.form-widget-background--spacing();
+
+	.style--light & {
+        background: darken(@color--light, 7%);
+        border-color: darken(@color--light, 10%);
+    }
+
+    .style--accent & {
+        background: darken(@color--accent, 7%);
+        border-color: darken(@color--accent, 10%);
+    }
+
+    .style--dark & {
+        background: darken(@color--dark, 7%);
+        border-color: darken(@color--dark, 10%);
+    }
 }

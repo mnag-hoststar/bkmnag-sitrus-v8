@@ -29,14 +29,26 @@
 // ------------------------------
 
 .tweet-item {
-	position: relative;
-	padding: 0;
-	font-size: @font__p--font-size;
-	.clearfix();
-	
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
+    position: relative;
+    padding: 0;
+    font-size: @font__p--font-size;
+    .clearfix();
+    
+    .make-font-a-little-smaller(@font__p--font-size);
+    .make-font-smaller(@font__p--font-size);
+    .make-font-a-lot-smaller(@font__p--font-size);
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
 // ------------------------------
@@ -44,13 +56,13 @@
 // ------------------------------
 
 .twitter__avatar {
-	position: static;
-	float: left;
-	margin: 0 1.5em 0 0;
+    position: static;
+    float: left;
+    margin: 0 1.5em 0 0;
 }
 
 .twitter__avatar-image {
-	display: block;
+    display: block;
 }
 
 // ------------------------------
@@ -58,41 +70,55 @@
 // ------------------------------
 
 a.twitter__account-link {
-	p;
-	font-size: @font__h4--font-size;
-	
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
+    p;
+    font-size: @font__h4--font-size;
+    
+    .make-font-a-little-smaller(@font__p--font-size);
+    .make-font-smaller(@font__p--font-size);
+    .make-font-a-lot-smaller(@font__p--font-size);
 }
 
 // ------------------------------
 // #Content
 // ------------------------------
 
+.tweet-content * {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
 // ------------------------------
 // #Tweet Metadata
 // ------------------------------
 
 .tweet-metadata {
-	
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
-	
-	// Twitter link at the end.
-	
-	.via, a {
-		font-family: @font__h4--font-family;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		font-size: 0.7em;
-		color: fade(@color__p--text, 50%);
-	}
+    
+    .make-font-a-little-smaller(@font__p--font-size);
+    .make-font-smaller(@font__p--font-size);
+    .make-font-a-lot-smaller(@font__p--font-size);
+    
+    // Twitter link at the end.
+    
+    .via, a {
+        font-family: @font__h4--font-family;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.7em;
+        color: fade(@color__p--text, 50%);
+    }
 
     a {
-		border: none;
-    	background-color: transparent;
+        border: none;
+        background-color: transparent;
         color: fade(@color__p--text, 50%);
     }
 }
@@ -100,8 +126,25 @@ a.twitter__account-link {
 // Timestamp
 
 .twitter__timestamp {
-	font-family: @font__h4--font-family;
+    font-family: @font__h4--font-family;
     letter-spacing: 1px;
     text-transform: uppercase;
-	font-size: 0.8em;
+    font-size: 0.8em;
+}
+
+.tweet-metadata .via,
+.tweet-metadata a,
+.twitter__timestamp {
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }

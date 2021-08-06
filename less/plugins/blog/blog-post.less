@@ -94,6 +94,18 @@
 	padding-bottom: 1em;
 	border-bottom: 1px solid @color-text--lighter;
 	margin-bottom: 0;
+
+	.style--light & {
+        border-color: lighten(@color--light, 10%);
+    }
+
+    .style--accent & {
+        border-color: lighten(@color--accent, 10%);
+    }
+
+    .style--dark & {
+        border-color: lighten(@color--dark, 10%);
+    }
 }
 
 // ------------------------------
@@ -121,6 +133,18 @@
 	@media @mobile {
     	display: block;
 	}
+
+	.style--light & {
+        border-color: lighten(@color--light, 10%);
+    }
+
+    .style--accent & {
+        border-color: lighten(@color--accent, 10%);
+    }
+
+    .style--dark & {
+        border-color: lighten(@color--dark, 10%);
+    }
 }
 
 .category-title, .tags-title {

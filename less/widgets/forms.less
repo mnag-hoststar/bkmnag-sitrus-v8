@@ -27,7 +27,7 @@
 // is not the same as the page background.
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
-	padding: 2em;
+    padding: 2em!important;
 }
 
 // ------------------------------
@@ -37,17 +37,32 @@
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
 .widget[data-name="advancedcontactform"] {
-	border: 1px solid fade(@color__form--border, 20%);
-	background: fade(@color__form--background, 7%);
-	.form-widget-background--spacing();
+    border: 1px solid fade(@color__form--border, 20%);
+    background: fade(@color__form--background, 7%);
+    .form-widget-background--spacing();
+
+    .style--light & {
+        background: darken(@color--light, 7%);
+        border-color: darken(@color--light, 20%);
+    }
+
+    .style--accent & {
+        background: darken(@color--accent, 7%);
+        border-color: darken(@color--accent, 20%);
+    }
+
+    .style--dark & {
+        background: darken(@color--dark, 7%);
+        border-color: darken(@color--dark, 20%);
+    }
 }
 
 .form {
-	margin: 0 auto;
+    margin: 0 auto;
 
-	@media @tablet-horizontal {
-		max-width: 100%;
-	}
+    @media @tablet-horizontal {
+        max-width: 100%;
+    }
 }
 
 // ------------------------------
@@ -55,10 +70,26 @@
 // ------------------------------
 
 .form .legend {
-	//display: none;
-	margin-bottom: 1em;
-	color: @color__form-legend--text;
-	background-color: transparent;
+    //display: none;
+    margin-bottom: 1em;
+    color: @color__form-legend--text;
+    background-color: transparent;
+
+    &:empty {
+        display: none;
+    }
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // ------------------------------
@@ -66,11 +97,11 @@
 // ------------------------------
 
 .form .form-group {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 
-	&:last-of-type {
-		margin-bottom: 0;
-	}
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 // ------------------------------
@@ -78,13 +109,13 @@
 // ------------------------------
 
 .form label {
-	margin: 0 0 0.3em;
-	line-height: 1.5em;
+    margin: 0 0 0.3em;
+    line-height: 1.5em;
 }
 
 label {
-	font-family: @font__p--font-family;
-	font-size: @font__p--font-size * 0.8;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size * 0.8;
 }
 
 input[type="search"],
@@ -94,8 +125,8 @@ input[type="password"],
 .input--search,
 textarea,
 select {
-	height: @font__button--line-height;
-	font-size: @font__p--font-size * 0.9;
+    height: @font__button--line-height;
+    font-size: @font__p--font-size * 0.9;
 }
 
 // ------------------------------
@@ -113,19 +144,65 @@ textarea {
     padding: 0.6em 1em;
     border: 1px solid fade(@color__form--border, 27%);
     color: @color__p--text;
-	.transition();
+    .transition();
     .appearance(none);
-	
-	&:hover {
-    	border: 1px solid fade(@color__form--border, 50%);
-	}
-	
-	// Focus style for easier keyboard navigation
-	
-	&:focus {
-    	border: 1px solid @color__form--border;
-		.box-shadow(none);
-	}
+    
+    &:hover {
+        border: 1px solid fade(@color__form--border, 50%);
+
+        .style--light & {
+            background-color: @color--light;
+            border-color: darken(@color--light, 50%);
+        }
+
+        .style--accent & {
+            background-color: @color--accent;
+            border-color: darken(@color--accent, 50%);
+        }
+
+        .style--dark & {
+            background-color: @color--dark;
+            border-color: darken(@color--dark, 50%);
+        }
+    }
+    
+    // Focus style for easier keyboard navigation
+    
+    &:focus {
+        border: 1px solid @color__form--border;
+        .box-shadow(none);
+
+        .style--light & {
+            border-color: darken(@color--light, 50%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent, 50%);
+        }
+
+        .style--dark & {
+            border-color: darken(@color--dark, 50%);
+        }
+    }
+
+    .style--light & {
+        background-color: @color--light;
+        border-color: darken(@color--light, 20%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+        border-color: darken(@color--accent, 20%);
+        color: @contrast--accent;
+    }
+
+    .style--dark &,
+    .style--background-image & {
+        background-color: @color--dark;
+        border-color: darken(@color--dark, 20%);
+        color: @contrast--dark;
+    }
 }
 
 // Multiple Lines Inputs
@@ -143,18 +220,66 @@ textarea {
 
 ::-webkit-input-placeholder {
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 :-ms-input-placeholder {
    color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 input:focus {
@@ -190,6 +315,18 @@ input:focus {
 		label[for*="input--terms"] span a.form__link {
 			.paragraph;
 			line-height: 1.3em;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
 		}
 
 		input[type="radio"],
@@ -205,22 +342,58 @@ input:focus {
 			width: 100% !important;
 			height: 100% !important;
 
-			&:hover + label:before {
-				border: 1px solid fade(@color__form--border, 50%);
-			}
+            &:hover + label:before {
+                border: 1px solid fade(@color__form--border, 50%);
 
-			&:checked + label:before {
-				border: 1px solid @color__form--border;
-			}
+                .style--light & {
+                    border-color: darken(@color--light, 50%);
+                }
 
-			&:checked + label:after {
-				opacity: 1;
-			}
+                .style--accent & {
+                    border-color: darken(@color--accent, 50%);
+                }
 
-			&:focus + label:before,
-			&:focus:checked + label:before {
-				border: 1px solid @color__form--border;
-			}
+                .style--dark & {
+                    border-color: darken(@color--dark, 50%);
+                }
+            }
+
+            &:checked + label:before {
+                border: 1px solid @color__form--border;
+
+                .style--light & {
+                    border-color: darken(@color--light, 50%);
+                }
+
+                .style--accent & {
+                    border-color: darken(@color--accent, 50%);
+                }
+
+                .style--dark & {
+                    border-color: darken(@color--dark, 50%);
+                }
+            }
+
+            &:checked + label:after {
+                opacity: 1;
+            }
+
+            &:focus + label:before,
+            &:focus:checked + label:before {
+                border: 1px solid @color__form--border;
+
+                .style--light & {
+                    border-color: darken(@color--light, 50%);
+                }
+
+                .style--accent & {
+                    border-color: darken(@color--accent, 50%);
+                }
+
+                .style--dark & {
+                    border-color: darken(@color--dark, 50%);
+                }
+            }
 		}
 
 		.option-item--radio,
@@ -313,12 +486,12 @@ input:focus {
 
 .select-wrap {
     position: relative;
-	margin-top: 1em;
+    margin-top: 1em;
 
     @media @mobile {
         max-width: 100%;
     }
-	
+    
     // Icon
 
     &:before {
@@ -328,7 +501,7 @@ input:focus {
         height: 1em;
         line-height: 1em;
         text-align: center;
-		font-size: 1.5em;
+        font-size: 1.5em;
         color: @color__p--text;
         position: absolute;
         right: 0.5em;
@@ -336,9 +509,9 @@ input:focus {
         margin-top: -0.5em;
         z-index: 1;
 
-		@media @mobile {
-			font-size: 2em;
-		}
+        @media @mobile {
+            font-size: 2em;
+        }
     }
 }
 
@@ -347,7 +520,7 @@ input:focus {
 .select {
     position: relative;
     display: block;
-	padding: 0 2em 0 1em;
+    padding: 0 2em 0 1em;
     width: 100%;
     border: 1px solid fade(@color__form--border, 27%);
     font-size: 1em;
@@ -355,20 +528,20 @@ input:focus {
     .appearance(none);
 
     @media @mobile {
-		padding: 0 2.7em 0 1em;
+        padding: 0 2.7em 0 1em;
     }
 
     &:hover {
-		border: 1px solid fade(@color__form--border, 50%);
+        border: 1px solid fade(@color__form--border, 50%);
     }
 
     &:focus {
-		border: 1px solid @color__form--border;
-	}
-	
-	&:hover:focus {
-		border: 1px solid @color__form--border;
-	}
+        border: 1px solid @color__form--border;
+    }
+    
+    &:hover:focus {
+        border: 1px solid @color__form--border;
+    }
 }
 
 .select::-ms-expand {
@@ -390,7 +563,7 @@ input:focus {
         .error {
             border-bottom: 2px solid @message-color--error !important;
             &:focus {
-				.box-shadow(none);
+                .box-shadow(none);
             }
         }
     }
@@ -401,30 +574,30 @@ input:focus {
 // ------------------------------
 
 .signupform {
-	
-	.form-body {
-		display: table;
-		width: 100%;
-	}
+    
+    .form-body {
+        display: table;
+        width: 100%;
+    }
 
-	.form-group {
-		display: table-cell;
-		vertical-align: middle;
-		height: 3em;
-		
-		&:first-child {
-			width: 100%;
-			padding-right: 0.5em;
-		}
-		
-		.button {
-			white-space: nowrap;
-		}
-	}
+    .form-group {
+        display: table-cell;
+        vertical-align: middle;
+        height: 3em;
+        
+        &:first-child {
+            width: 100%;
+            padding-right: 0.5em;
+        }
+        
+        .button {
+            white-space: nowrap;
+        }
+    }
 
-	label {
-		display: none;
-	}
+    label {
+        display: none;
+    }
 }
 
 // ------------------------------

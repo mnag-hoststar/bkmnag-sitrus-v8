@@ -263,12 +263,33 @@
 			padding: 0;
 			.box-shadow(none);
 		}
+
+		.style--light & {
+            background-color: darken(@color--light, 10%);
+        }
+
+        .style--accent & {
+            background-color: darken(@color--accent, 10%);
+        }
+
+        .style--dark & {
+            background-color: darken(@color--dark, 10%);
+        }
 	}
 
 	&.selected .button {
 		background: @color__slideshow-pagination-item--text--selected;
 
-		@media @tablet {
-		}
+		.style--light & {
+            background: @color--accent;
+        }
+
+        .style--accent & {
+            background: @contrast--accent;
+        }
+
+        .style--dark & {
+            background: @color--accent;
+        }
 	}
 }
