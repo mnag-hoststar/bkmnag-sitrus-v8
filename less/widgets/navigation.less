@@ -1,19 +1,6 @@
-// ----------------------------------------
 // Sitrus: LESS > Widgets > Navigation
-// ----------------------------------------
-//
-// #Logo & Company Name
-// #Navigation
-// #Navigation Toggle Button
-// #Navigation Body
-// #Navigation List
-// #Navigation Items
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Logo & Company Name
-// ------------------------------
+// Logo & Company Name
 
 .template__company {
 	-webkit-flex: 1;
@@ -66,9 +53,7 @@
 	}
 }
 
-// ------------------------------
-// #Navigation
-// ------------------------------
+// Navigation
 
 .template__navigation {
 	-webkit-flex: 2;
@@ -89,12 +74,7 @@
 	}
 }
 
-// ------------------------------
-// #Navigation Toggle Button
-// ------------------------------
-
 // Navigation Toggle Button
-// It only appears on tablet and mobile sizes.
 
 .navigation-toggle {
 	display: none;
@@ -178,23 +158,17 @@
 		@media @tablet {
 			background: transparent;
 			
-			// Top and bottom bar
-			
 			&:before,
 			&:after {
     			top: 50%;
     			right: 0;
                 .transition-delay(0s, 0.05s);
 			}
-			
-			// Top Bar
 
 			&:before {
 				.transform-rotate(45deg);
 
 			}
-			
-			// Bottom Bar
 
 			&:after {
 				.transform-rotate(-45deg);
@@ -203,17 +177,11 @@
 	}
 }
 
-// ------------------------------
-// #Navigation Body
-// ------------------------------
-
-// Dark overlay on tablet and mobile.
+// Navigation Body
 
 .navigation-body {
     z-index: 2;
 	.transition(opacity, 0s);
-	
-	// This is only shown in Tablet and Mobile
 	
 	@media @tablet {
 		outline: 0;
@@ -221,8 +189,6 @@
 		width: 0;
 		opacity: 0;
 		display: none;
-		
-		// When Navigation is open
 
 		.open & {
 		    position: absolute;
@@ -236,10 +202,7 @@
 	}
 }
 
-
-// ------------------------------
-// #Navigation List
-// ------------------------------
+// Navigation List
 
 .navigation-list {
 	margin: 0;
@@ -252,11 +215,7 @@
 	}
 }
 
-// ------------------------------
-// #Navigation Items
-// ------------------------------
-
-// Navigation Normal Item
+// Navigation Items
 
 .navigation-item {
 	margin-bottom: 0;
@@ -280,23 +239,17 @@
 		background: @color__navigation-item--background;
 		text-transform: uppercase;
 		.transition (all, 0.5s, ease);
+		
 		@media @tablet {
 			padding: 0.5em 0;
 			font-size: @font__navigation--font-size * 1.2;
 			line-height: @font__navigation--line-height * 1.2;
 		}
-	
-		//.make-font-a-little-smaller(@font__navigation--font-size);
-		//.make-font-smaller(@font__navigation--font-size);
-		//.make-font-a-lot-smaller(@font__navigation--font-size);
 		
 		&:hover {
 			color: @color__navigation--text--hover;
 			background: @color__navigation-item--background--hover;
 			.transition (all, 0.5s, ease);
-			
-			@media @tablet {
-			}
 		}
 	}
 
@@ -317,9 +270,6 @@
 // Navigation Folder Item
 
 .navigation-item.folder {
-	
-	// Folder Icon
-	
 	> .item-name {
 		&:after {
 			right: 0.5em;
@@ -394,9 +344,6 @@
 		color: @color__navigation--text;
 		line-height: 3em;
 		border-bottom: 0;
-
-		@media @tablet {
-		}
 		
 		&:hover {
 			color: @color__navigation--text--hover;
@@ -412,9 +359,6 @@
 }
 
 .navigation-item.folder {
-	
-	// Open Submenu
-	
 	&.folder-open:hover .navigation-list--children,
 	&.folder-open:active .navigation-list--children,
 	&.folder-open .navigation-list--children {

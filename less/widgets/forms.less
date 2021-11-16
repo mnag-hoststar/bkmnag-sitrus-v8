@@ -1,38 +1,12 @@
-// ----------------------------------------
 // Sitrus: LESS > Widgets > Forms
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Form Background
-// #Legend
-// #Form
-// #Label
-// #Text Inputs
-// #Placeholders
-// #Dropdowns
-// #Radio Buttons and Checkboxes
-// #Error Messages
-// 
-// #Sign Up Form
-// #Contact Form
-// #Advanced Contact Form
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the form background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
     padding: 2em!important;
 }
 
-// ------------------------------
-// #Global Form Styles
-// ------------------------------
+// Global Form Styles
 
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
@@ -65,12 +39,9 @@
     }
 }
 
-// ------------------------------
-// #Legend
-// ------------------------------
+// Legend
 
 .form .legend {
-    //display: none;
     margin-bottom: 1em;
     color: @color__form-legend--text;
     background-color: transparent;
@@ -92,9 +63,7 @@
     }
 }
 
-// ------------------------------
-// #Form
-// ------------------------------
+// Form
 
 .form .form-group {
     margin-bottom: 1em;
@@ -104,9 +73,7 @@
     }
 }
 
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 .form label {
     margin: 0 0 0.3em;
@@ -129,9 +96,7 @@ select {
     font-size: @font__p--font-size * 0.9;
 }
 
-// ------------------------------
-// #Text Inputs
-// ------------------------------
+// Text Inputs
 
 // All Input Fields
 
@@ -209,14 +174,9 @@ textarea {
 
 textarea {
     display: block;
-
-    @media @mobile {
-    }
 }
 
-// ------------------------------
-// #Placeholders
-// ------------------------------
+// Placeholders
 
 ::-webkit-input-placeholder {
    color: @color-text--light;
@@ -234,7 +194,7 @@ textarea {
     }
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
    color: @color-text--light;
 
    .style--light & {
@@ -250,7 +210,7 @@ textarea {
     }
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
    color: @color-text--light;
 
    .style--light & {
@@ -300,9 +260,7 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Radio Buttons and Checkboxes
-// ------------------------------
+// Radio Buttons and Checkboxes
 
 .widget .form {
 	.option-list,
@@ -420,11 +378,9 @@ input:focus {
 				&:before {
 					content: " ";
 					position: absolute;
-					//top: 0.7em;
 					left: -40px;
 					width: 22px;
 					height: 22px;
-					//margin-top: -0.8em;
 					background-color: @color__body--background;
 					border: 1px solid fade(@color__form--border, 27%);
 					min-width: auto;
@@ -453,7 +409,6 @@ input:focus {
 					left: -39px;
 					width: 20px;
 					height: 20px;
-					//margin-top: -0.8em;
 					.transform-scale(0.5);
 				}
 			}
@@ -477,10 +432,6 @@ input:focus {
 		margin-top: 2em;
 	}
 }
-
-// ------------------------------
-// #Dropdowns
-// ------------------------------
 
 // Select Wrap
 
@@ -548,20 +499,21 @@ input:focus {
     display: none;
 }
 
-// ------------------------------
-// #Error Messages
-// ------------------------------
+// Error Messages
 
 .form {
     input.error {
         border: none !important;
     }
+
     textarea.error {
         border: 1px solid @message-color--error !important;
     }
+    
     .form-group {
         .error {
             border-bottom: 2px solid @message-color--error !important;
+
             &:focus {
                 .box-shadow(none);
             }
@@ -569,12 +521,9 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Sign Up Form
-// ------------------------------
+// Sign Up Form
 
 .signupform {
-    
     .form-body {
         display: table;
         width: 100%;
@@ -599,11 +548,3 @@ input:focus {
         display: none;
     }
 }
-
-// ------------------------------
-// #Contact Form
-// ------------------------------
-
-// ------------------------------
-// #Advanced Contact Form
-// ------------------------------

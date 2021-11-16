@@ -1,22 +1,6 @@
-// ----------------------------------------
 // Sitrus: LESS > Main > Theme
-// ----------------------------------------
-// This contains all styles that are not
-// widgets.
-//
-// #Header
-// #Site Styles
-// #Header
-// #Page Styles
-// #Content
-// #Footer
-// #Widget Overlay
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Header
-// ------------------------------
+// Header
 
 .template__header {
 	position: relative;
@@ -38,10 +22,7 @@
     }
 }
 
-
-// ------------------------------
-// #Site Styles
-// ------------------------------
+// Site Styles
 
 * {
 	.box-sizing(border-box);
@@ -55,12 +36,9 @@
 
 html, body {
     background-color: @color__body--background;
-	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
-	
-	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
 }
 
@@ -68,23 +46,11 @@ body:not(.edit) {
     overflow-x: hidden;
 }
 
-
-// Site Container
-.site-container {
-
-    @media @bp-global-above-fullwidth {
-    }
-}
-
-
-// HTML5 Semantic Elements
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
 }
 
-// ------------------------------
-// #Content
-// ------------------------------
+// Content
 
 // Main
 
@@ -127,9 +93,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 
-// ------------------------------
-// #Footer
-// ------------------------------
+// Footer
 
 .template__footer {
     background-color: @color__footer--background;
@@ -137,13 +101,16 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	.footer-border-removal();
 
 	// Widget
+
 	h1, h2, h3, h4, h5, p, .profile a {
 		color: @color__footer--border;
 		padding-bottom: 1em;
 	}
+
 	.profile p {
 		padding-bottom: .5em;
 	}
+
 	.footerleft, 
 	.footerright {
 		display: inline-block;
@@ -154,6 +121,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 			text-align: center;
 		}
 	}
+	
 	.footerleft {
 		width: 24%;
 		margin-right: 1%;
@@ -176,9 +144,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     }
 }
 
-// ------------------------------
-// #Widget Overlay
-// ------------------------------
+// Widget Overlay
 
 .widget__item {
     font-size: 0;

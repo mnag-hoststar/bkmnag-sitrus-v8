@@ -1,21 +1,6 @@
-// ----------------------------------------
 // Sitrus: LESS > Plugins > Ecommerce > Product List
-// ----------------------------------------
-//
-// #Title
-// #Product Filters
-// #Product Search
-// #Dropdowns
-// #Listing Order
-// #Product List
-// #Product Item
-// #Featured Product
-// 
-// ----------------------------------------
 
-// ------------------------------
-// #Title
-// ------------------------------
+// Title
 
 .ecomproductslist__listing-title {
     display: none;
@@ -25,14 +10,9 @@
     }
 }
 
-// ------------------------------
-// #Product Filters
-// ------------------------------
+// Product Filters
 
 .product-filters {
-    
-    // Legend
-
     .legend {
         display: none;
     }
@@ -53,7 +33,6 @@
         border: 1px solid fade(@color__form--border, 20%);
         background: fade(@color__form--background, 7%);
         .form-widget-background--spacing();
-
 
         @media (max-width: 1024px) {
             display: block;
@@ -84,9 +63,7 @@
     }
 }
 
-// ------------------------------
-// #Product Search
-// ------------------------------
+// Product Search
 
 .product-filters .fieldset--search {
 
@@ -208,9 +185,7 @@
     }
 }
 
-// ------------------------------
-// #Dropdowns
-// ------------------------------
+// Dropdowns
 
 .product-filters .fieldset--filters {
 
@@ -266,7 +241,6 @@
             margin-right: 0;
         }
 
-
         @media @mobile {
             width: 100%;
             margin-bottom: 8px;
@@ -305,9 +279,11 @@
         .select-wrap {
             margin-top: 0;
             max-width: none;
+
             @media @tablet-horizontal {
                 .select.medium;
             }
+
             @media @mobile {
                 .select.small;
             }
@@ -315,9 +291,7 @@
     }
 }
 
-// ------------------------------
-// #Listing Order
-// ------------------------------
+// Listing Order
 
 .ecomproductslist .listing-order {
     display: none;
@@ -329,14 +303,13 @@
     @media @tablet-horizontal {
         padding: 16px 40px;
     }
+    
     @media @tablet {
         padding: 12px 20px;
     }
 }
 
-// ------------------------------
-// #Product List
-// ------------------------------
+// Product List
 
 // Listing Body
 
@@ -365,9 +338,7 @@
     }
 }
 
-// ------------------------------
-// #Product Item
-// ------------------------------
+// Product Item
 
 .product-item {
 	margin: 0;
@@ -534,9 +505,7 @@
     .justify-content(space-between);
 }
 
-// ------------------------------
-// #Featured Product
-// ------------------------------
+// Featured Product
 
 .ecomfeaturedproducts .listing-title {
     h2;
@@ -570,8 +539,6 @@
     }
 }
 
-// ------------------------------
-// #Paginatinon
-// ------------------------------
+// Paginatinon
 
 // For pagination, see less/plugins/plugins.less.

@@ -1,15 +1,6 @@
-// ----------------------------------------
 // Sitrus: LESS > Plugins
-// ----------------------------------------
-//
-// #Tags and Categories
-// #Paginatinon
-// 
-// ----------------------------------------
 
-// ------------------------------
-// #Tags and Categories
-// ------------------------------
+// Tags and Categories
 	
 .post-category,
 .post-tags {
@@ -18,12 +9,10 @@
 
 .category-title,
 .tags-title {
-	//label;
 	padding: 0;
 }
 
 .tag-list {
-	
 	li {
 		padding: 0;
 		margin: 0;
@@ -58,12 +47,7 @@ a.tag-link {
 
 }
 
-// ------------------------------
-// #Paginatinon
-// ------------------------------
-
-// Styles for both the Blog Post List
-// and the Ecommerce Product List.
+// Paginatinon
 
 .ecomproductslist,
 .blogpostlist {
@@ -90,8 +74,6 @@ a.tag-link {
 	}
 }
 
-// Styles only for the Blog Post List.
-
 .blogpostlist {
 	.pagination-list {
 		.justify-content(space-between);
@@ -108,6 +90,7 @@ a.tag-link {
 		
 		&:before {
 			font-size: 1em;
+
 			@media @mobile {
 				margin: 0.1em -0.2em 0 -0.2em;
 			}
@@ -115,6 +98,7 @@ a.tag-link {
 		
 		&:after {
 			font-size: 1em;
+			
 			@media @mobile {
 				margin: 0.1em -0.3em 0 -0.1em;
 			}
