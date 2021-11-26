@@ -81,6 +81,8 @@
     
     .responsivecolumns & {
         float: none;
+        width: 100%;
+        padding: 14px 20px;
     }
     
     // Label
@@ -119,6 +121,10 @@
         margin-bottom: 0;
 
         @media @mobile, @tablet-horizontal {
+            display: block;
+        }
+    
+        .responsivecolumns & {
             display: block;
         }
     }
@@ -197,6 +203,11 @@
         padding: 10px 20px;
     }
     
+    .responsivecolumns & {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    
     // Form Body
     
     .form-body {
@@ -246,7 +257,12 @@
             margin-bottom: 8px;
             margin-right: 0;
         }
-
+    
+        .responsivecolumns & {
+            width: 100%;
+            margin-bottom: 8px;
+            margin-right: 0;
+        }
 
         // Label
 
@@ -287,6 +303,10 @@
             @media @mobile {
                 .select.small;
             }
+    
+            .responsivecolumns & {
+                .select.small;
+            }
         }
     }
 }
@@ -305,6 +325,10 @@
     }
     
     @media @tablet {
+        padding: 12px 20px;
+    }
+    
+    .responsivecolumns & {
         padding: 12px 20px;
     }
 }
