@@ -34,91 +34,97 @@
 			display: none;
 		}
 	}
-}
 
-// Post Content
+	&__post {
 
-.blogpost {
-	&__post-content {
-		margin: 0;
+		// Post Content
+	
+		&-content {
+			margin: 0;
+		}
+	
+		&-header {
+			padding: 2em 0 1em;
+		}
+	
+		&-body {
+			float: left;
+			width: 70%;
+			padding-right: 4em;
+		}
+	
+		&-title {
+			margin: 0;
+			padding: 0;
+			.heading--1;
+		}
+		
+		// Post Footer
+		
+		&-footer {
+			float: right;
+			width: 30%;
+		
+			// Post Timestamp
+			
+			.timestamp {
+				padding-bottom: 1em;
+				border-bottom: 1px solid @color-text--lighter;
+				margin-bottom: 0;
+			
+				.style--light & {
+					border-color: lighten(@color--light, 10%);
+				}
+			
+				.style--accent & {
+					border-color: lighten(@color--accent, 10%);
+				}
+			
+				.style--dark & {
+					border-color: lighten(@color--dark, 10%);
+				}
+			}
+		}
+		
+		// Post Attributes
+		
+		&-attributes {
+			margin: 0;
+			position: relative;
+			
+			@media @mobile {
+				display: block;
+			}
+		}
 	}
-    &__post-header {
-        padding: 2em 0 1em;
-    }
-	&__post-body {
-		float: left;
-		width: 70%;
-		padding-right: 4em;
-	}
-    &__post-title {
-        margin: 0;
-        padding: 0;
-        .heading--1;
-    }
 }
+	
+// Post Category and Tags
 
-// Post Footer
-
-.blogpost__post-footer {
-	float: right;
-	width: 30%;
-}
-
-// Post Timestamp
-
-.blogpost__post-footer .timestamp {
-	padding-bottom: 1em;
+.post-category,
+.post-tags {
+	padding: 1em 0;
 	border-bottom: 1px solid @color-text--lighter;
-	margin-bottom: 0;
-
-	.style--light & {
-        border-color: lighten(@color--light, 10%);
-    }
-
-    .style--accent & {
-        border-color: lighten(@color--accent, 10%);
-    }
-
-    .style--dark & {
-        border-color: lighten(@color--dark, 10%);
-    }
-}
-
-// Post Attributes
-
-.blogpost__post-attributes {
-	margin: 0;
-	position: relative;
 	
 	@media @mobile {
 		display: block;
 	}
-}
-
-// Post Category and Tags
-
-.post-category, .post-tags {
-	padding: 1em 0;
-    border-bottom: 1px solid @color-text--lighter;
-	
-	@media @mobile {
-    	display: block;
-	}
 
 	.style--light & {
-        border-color: lighten(@color--light, 10%);
-    }
+		border-color: lighten(@color--light, 10%);
+	}
 
-    .style--accent & {
-        border-color: lighten(@color--accent, 10%);
-    }
+	.style--accent & {
+		border-color: lighten(@color--accent, 10%);
+	}
 
-    .style--dark & {
-        border-color: lighten(@color--dark, 10%);
-    }
+	.style--dark & {
+		border-color: lighten(@color--dark, 10%);
+	}
 }
 
-.category-title, .tags-title {
+.category-title,
+.tags-title {
 	display: inline-block;
 	vertical-align: middle;
 }

@@ -105,7 +105,8 @@
 	
 	// Cell Total, Cell Price, Cell Quantity
 
-	.cell--price, .cell--total, .cell--quantity {
+	.cell--price,
+    .cell--total, .cell--quantity {
 		@media @basketsummary-medium, @mobile {
 			&:before {
 				content: attr(data-title);
@@ -166,7 +167,8 @@
 
     // Cell Total, Cell Price
 
-	.cell--price, .cell--total {
+	.cell--price,
+    .cell--total {
         text-align: right;
 		@media @basketsummary-medium, @mobile {
             float: left;

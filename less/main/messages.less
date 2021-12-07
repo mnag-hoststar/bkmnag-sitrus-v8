@@ -76,57 +76,57 @@
 		.border-radius(50%);
 		color: #fff;
     }
-}
 
-// Error
-
-.message--error {
-	background-color: @message-color--error;
-
-	// Icon
-	&:before {
-		// Exclamation circle
-		content: "\f12a";
+	// Error
+	
+	.message--error {
+		background-color: @message-color--error;
+	
+		// Icon
+		&:before {
+			// Exclamation circle
+			content: "\f12a";
+		}
 	}
-}
-
-// Warning
-
-.message--warning {
-	background-color: @message-color--warning;
-
-	&:before {
-		content: "\f071";
+	
+	// Warning
+	
+	&--warning {
+		background-color: @message-color--warning;
+	
+		&:before {
+			content: "\f071";
+		}
 	}
-}
-
-// Information
-
-.message--information {
-	background-color: @message-color--information;
-
-	&:before {
-		content: "\f129";
+	
+	// Information
+	
+	&--information {
+		background-color: @message-color--information;
+	
+		&:before {
+			content: "\f129";
+		}
 	}
-}
-
-// Success
-
-.message--success {
-	background-color: @message-color--success;
-
-	&:before {
-		content: "\f00c";
+	
+	// Success
+	
+	&--success {
+		background-color: @message-color--success;
+	
+		&:before {
+			content: "\f00c";
+		}
 	}
-}
-
-// Not Found
-
-.message--not-found {
-	background-color: @message-color--not-found;
-
-	&:before {
-		content: "\f002";
+	
+	// Not Found
+	
+	&--not-found {
+		background-color: @message-color--not-found;
+	
+		&:before {
+			content: "\f002";
+		}
 	}
 }
 
