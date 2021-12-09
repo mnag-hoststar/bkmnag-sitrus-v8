@@ -74,6 +74,7 @@
             display: block;
     	    height: @font__navigation--line-height;
     	}
+		
     	&:after {
     	    content: "";
             display: block;
@@ -236,9 +237,11 @@
 		box-sizing: content-box;
 		line-height: @font__navigation--line-height;
 	}
+
 	.language-selector.language-selector--flag-text & {
 		margin: 0;
 	}
+
 	.language-selector.language-selector--dropdown.language-selector--flag-text & {
 		float: left;
 		box-sizing: border-box;
@@ -261,10 +264,12 @@
 		display: inline-block;
 		padding: 20px 0 20px 20px;
 	}
+
 	.language-selector.language-selector--text &,
 	.language-selector.language-selector--flag & {
 		padding: 20px 0;
 	}
+
 	.language-selector.language-selector--text & {
 		display: block;
 	}
@@ -276,7 +281,7 @@
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-small {
 				display: none;
 			}
 		}
