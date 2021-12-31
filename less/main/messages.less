@@ -33,7 +33,7 @@
 		line-height: @font__h3--line-height;
 		margin-top: 0;
 		margin-bottom: 0.5em;
-		color: #fff;
+		color: @color__primary;
 	}
 	
 	p {
@@ -41,7 +41,7 @@
 		font-family: @font__p--font-family;
 		line-height: @font__p--line-height;
 		font-size: @font__p--font-size;
-		color: #fff;
+		color: @color__primary;
 		
 		.make-font-a-little-smaller(@font__p--font-size);
 		.make-font-smaller(@font__p--font-size);
@@ -74,7 +74,7 @@
 		font-size: 1.4em;
 		line-height: 1.4em;
 		.border-radius(50%);
-		color: #fff;
+		color: @color__primary;
     }
 
 	// Error
@@ -169,10 +169,10 @@
 	
 	p, a {
 		.paragraph;
-		color: #fff;
+		color: @color__primary;
 		
 		&, &:hover {
-			color: #fff;
+			color: @color__primary;
 		}
 	}
 	
