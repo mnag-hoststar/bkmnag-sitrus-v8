@@ -470,7 +470,7 @@ input:focus {
 
 // Select
 
-.select {
+select {
     position: relative;
     display: block;
     padding: 0 2em 0 1em;
@@ -495,10 +495,15 @@ input:focus {
     &:hover:focus {
         border: 1px solid @color__form--border;
     }
-}
 
-.select::-ms-expand {
-    display: none;
+    &::-ms-expand {
+        display: none;
+    }
+
+    option {
+		background-color: @color__container--background;
+		color: @color__p--text;
+	}
 }
 
 // Error Messages
