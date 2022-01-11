@@ -211,6 +211,10 @@
 	&:last-child {
 		margin-bottom: @item--margin-size;
 	}
+
+    .responsivecolumns & {
+		width: 100%;
+    }
 }
 
 .item--margin-size--2to1-cols(@item--margin-size: 1%) {
@@ -218,6 +222,10 @@
 	margin: @item--margin-size;
 	
     @media @mobile {
+		width: 100%;
+    }
+
+    .responsivecolumns & {
 		width: 100%;
     }
 	
