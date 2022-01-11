@@ -199,7 +199,7 @@ span {
 
 // Link
 
-a {
+a, .link {
 	text-decoration: none;
 	.transition();
 
@@ -228,10 +228,40 @@ a {
 		padding: 0 2px;
 		height: auto;
 		text-decoration: none;
+
+		.style--light & {
+			color: @color--accent;
+			border-color: @color--accent;
+		}
+	
+		.style--accent & {
+			color: @color--dark;
+			border-color: @color--dark;
+		}
+	
+		.style--dark & {
+			color: @color--accent;
+			border-color: @color--accent;
+		}
 		
 		&:hover {
 			color: darken(@color__p--text, 20%);
 			border-bottom: 1px solid darken(@color__p--text, 20%);
+
+			.style--light & {
+				color: darken(@color--accent, 20%);
+				border-color: darken(@color--accent, 20%);
+			}
+		
+			.style--accent & {
+				color: darken(@color--dark, 20%);
+				border-color: darken(@color--dark, 20%);
+			}
+		
+			.style--dark & {
+				color: darken(@color--accent, 20%);
+				border-color: darken(@color--accent, 20%);
+			}
 		}
 	
 		.style--light & {
