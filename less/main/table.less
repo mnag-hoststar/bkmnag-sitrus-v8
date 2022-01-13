@@ -158,15 +158,15 @@ tr:last-child td {
 	border-bottom: 1px solid @color__p--text;
 
 	.style--light & {
-		border-bottom-color: fade(@contrast--light, 60%);
+		border-bottom-color: @contrast--light;
 	}
 
 	.style--accent & {
-		border-bottom-color: fade(@contrast--accent, 60%);
+		border-bottom-color: @contrast--accent;
 	}
 
 	.style--dark & {
-		border-bottom-color: fade(@contrast--dark, 60%);
+		border-bottom-color: @contrast--dark;
 	}
 	
 	@media @mobile {
@@ -193,43 +193,8 @@ tr:last-child td {
 				border-bottom-color: @contrast--dark;
 			}
 		}
-	}
-	
-	.responsivecolumns .columns-two-left &,
-	.responsivecolumns .columns-two-right & {
-		@media @tablet {
-			border-bottom: none;
-		}
 
-		&:last-child {
-			@media @tablet {
-				border-bottom: 1px solid @color__p--text;
-
-				.style--light & {
-					border-bottom-color: @contrast--light;
-				}
-			
-				.style--accent & {
-					border-bottom-color: @contrast--accent;
-				}
-			
-				.style--dark & {
-					border-bottom-color: @contrast--dark;
-				}
-			}
-		}
-	}
-	
-	.responsivecolumns .columns-three-left &,
-	.responsivecolumns .columns-three-middle &,
-	.responsivecolumns .columns-three-right &,
-	.responsivecolumns .columns-four-first &,
-	.responsivecolumns .columns-four-second &,
-	.responsivecolumns .columns-four-third &,
-	.responsivecolumns .columns-four-fourth & {
-		border-bottom: none;
-
-		&:last-child {
+		.responsivecolumns & {
 			border-bottom: 1px solid @color__p--text;
 
 			.style--light & {
