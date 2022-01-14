@@ -36,10 +36,15 @@
 
 html, body {
     background-color: @color__body--background;
+    width: -webkit-calc(100% - 0px);
+
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
-    width: -webkit-calc(100% - 0px);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
 body:not(.edit) {
