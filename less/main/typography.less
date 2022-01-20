@@ -414,16 +414,32 @@ ul {
 	}
 }
 
-// Block Quote
+// Blockquote
 
 blockquote {
 	background: fade(@color__p--text, 10%);
 	position: relative;
-	padding: 2em!important;
 	margin: 2em 0;
+	padding: 2em !important;
 	font-style: italic;
 	font-family: @font__p--font-family;
+	color: @color__p--text;
 	word-break: break-word;
+
+	.style--light & {
+	    background: fade(@contrast--light, 10%);
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    background: fade(@contrast--accent, 10%);
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    background: fade(@contrast--dark, 10%);
+	    color: @contrast--dark;
+	}
 
 	&:before {
 		position: absolute;
@@ -436,6 +452,8 @@ blockquote {
 
 	&:before,
 	&:after {
+		color: fade(@color__p--text, 50%);
+
 		.style--light & {
 		    color: fade(@contrast--light, 50%);
 		}
@@ -447,18 +465,6 @@ blockquote {
 		.style--dark & {
 		    color: fade(@contrast--dark, 50%);
 		}
-	}
-
-	.style--light & {
-	    color: fade(@contrast--light, 80%);
-	}
-
-	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
-	}
-
-	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
 	}
 	
 	.responsivecolumns & {
