@@ -305,18 +305,6 @@ a, .link {
 				border-color: darken(@color--accent, 20%);
 			}
 		}
-	
-		.style--light & {
-			color: @color--accent;
-		}
-	
-		.style--accent & {
-			color: @contrast--accent;
-		}
-	
-		.style--dark & {
-			color: @contrast--dark;
-		}
 	}
 }
 
@@ -324,6 +312,18 @@ a, .link {
 
 small {
 	color: @color__p--text;
+	
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
 
 // Preformatted and Code Text
