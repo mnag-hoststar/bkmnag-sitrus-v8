@@ -16,18 +16,18 @@
     .form-widget-background--spacing();
 
     .style--light & {
-        background: darken(@color--light, 7%);
-        border-color: darken(@color--light, 20%);
+        border-color: fade(@color__form--border, 20%);
+        background: fade(@color__form--background, 7%);
     }
 
     .style--accent & {
-        background: darken(@color--accent, 7%);
         border-color: darken(@color--accent, 20%);
+        background: darken(@color--accent, 7%);
     }
 
     .style--dark & {
-        background: darken(@color--dark, 7%);
         border-color: darken(@color--dark, 20%);
+        background: darken(@color--dark, 7%);
     }
 }
 
@@ -46,12 +46,8 @@
     color: @color__form-legend--text;
     background-color: transparent;
 
-    &:empty {
-        display: none;
-    }
-
     .style--light & {
-        color: @contrast--light;
+        color: @color__form-legend--text;
     }
 
     .style--accent & {
@@ -60,6 +56,10 @@
 
     .style--dark & {
         color: @contrast--dark;
+    }
+
+    &:empty {
+        display: none;
     }
 }
 
@@ -114,22 +114,35 @@ textarea {
     color: @color__p--text;
     .transition();
     .appearance(none);
+
+    .style--light & {
+        border-color: fade(@color__form--border, 27%);
+        color: @color__p--text;
+    }
+
+    .style--accent & {
+        border-color: darken(@color--accent, 20%);
+        color: @contrast--accent;
+    }
+
+    .style--dark &,
+    .style--background-image & {
+        border-color: darken(@color--dark, 20%);
+        color: @contrast--dark;
+    }
     
     &:hover {
         border: 1px solid fade(@color__form--border, 50%);
 
         .style--light & {
-            background-color: @color--light;
-            border-color: darken(@color--light, 50%);
+            border-color: fade(@color__form--border, 50%);
         }
 
         .style--accent & {
-            background-color: @color--accent;
             border-color: darken(@color--accent, 50%);
         }
 
         .style--dark & {
-            background-color: @color--dark;
             border-color: darken(@color--dark, 50%);
         }
     }
@@ -141,7 +154,7 @@ textarea {
         .box-shadow(none);
 
         .style--light & {
-            border-color: darken(@color--light, 50%);
+            border-color: @color__form--border;
         }
 
         .style--accent & {
@@ -151,25 +164,6 @@ textarea {
         .style--dark & {
             border-color: darken(@color--dark, 50%);
         }
-    }
-
-    .style--light & {
-        background-color: @color--light;
-        border-color: darken(@color--light, 20%);
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        background-color: @color--accent;
-        border-color: darken(@color--accent, 20%);
-        color: @contrast--accent;
-    }
-
-    .style--dark &,
-    .style--background-image & {
-        background-color: @color--dark;
-        border-color: darken(@color--dark, 20%);
-        color: @contrast--dark;
     }
 }
 
@@ -184,8 +178,8 @@ textarea {
 ::-webkit-input-placeholder {
    color: @color-text--light;
 
-   .style--light & {
-        color: @contrast--light;
+    .style--light & {
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -200,8 +194,8 @@ textarea {
 :-moz-placeholder {
    color: @color-text--light;
 
-   .style--light & {
-        color: @contrast--light;
+    .style--light & {
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -216,8 +210,8 @@ textarea {
 ::-moz-placeholder {
    color: @color-text--light;
 
-   .style--light & {
-        color: @contrast--light;
+    .style--light & {
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -232,8 +226,8 @@ textarea {
 :-ms-input-placeholder {
    color: @color-text--light;
 
-   .style--light & {
-        color: @contrast--light;
+    .style--light & {
+        color: @color-text--light;
     }
 
     .style--accent & {
@@ -276,18 +270,6 @@ input:focus {
 		label[for*="input--terms"] span a.form__link {
 			.paragraph;
 			line-height: 1.3em;
-
-            .style--light & {
-                color: @contrast--light;
-            }
-
-            .style--accent & {
-                color: @contrast--accent;
-            }
-
-            .style--dark & {
-                color: @contrast--dark;
-            }
 		}
 
 		input[type="radio"],
@@ -307,7 +289,7 @@ input:focus {
                 border: 1px solid fade(@color__form--border, 50%);
 
                 .style--light & {
-                    border-color: darken(@color--light, 50%);
+                    border-color: fade(@color__form--border, 50%);
                 }
 
                 .style--accent & {
@@ -323,7 +305,7 @@ input:focus {
                 border: 1px solid @color__form--border;
 
                 .style--light & {
-                    border-color: darken(@color--light, 50%);
+                    border-color: @color__form--border;
                 }
 
                 .style--accent & {
@@ -344,7 +326,7 @@ input:focus {
                 border: 1px solid @color__form--border;
 
                 .style--light & {
-                    border-color: darken(@color--light, 50%);
+                    border-color: @color__form--border;
                 }
 
                 .style--accent & {

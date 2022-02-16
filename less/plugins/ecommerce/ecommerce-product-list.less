@@ -34,27 +34,27 @@
         background: fade(@color__form--background, 7%);
         .form-widget-background--spacing();
 
+        .style--light & {
+            border-color: fade(@color__form--border, 20%);
+            background: fade(@color__form--background, 7%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent, 10%);
+            background: darken(@color--accent, 7%);
+        }
+
+        .style--dark & {
+            border-color: darken(@color--dark, 10%);
+            background: darken(@color--dark, 7%);
+        }
+
         @media @tablet-horizontal {
             display: block;
         }
         
         .responsivecolumns & {
             display: block;
-        }
-
-        .style--light & {
-            background: darken(@color--light, 7%);
-            border-color: darken(@color--light, 10%);
-        }
-
-        .style--accent & {
-            background: darken(@color--accent, 7%);
-            border-color: darken(@color--accent, 10%);
-        }
-
-        .style--dark & {
-            background: darken(@color--dark, 7%);
-            border-color: darken(@color--dark, 10%);
         }
     }
 
@@ -271,15 +271,15 @@
             text-transform: uppercase;
 
             .style--light & {
-                color: @contrast--light;
+                color: lighten(@color__p--text, 30%);
             }
 
             .style--accent & {
-                color: @contrast--accent;
+                color: lighten(@contrast--accent, 30%);
             }
 
             .style--dark & {
-                color: @contrast--dark;
+                color: lighten(@contrast--dark, 30%);
             }
         }
 
@@ -397,18 +397,6 @@
 			margin: 0 0 40px;
 		}
 	}
-
-    .style--light & {
-        border-color: darken(@color--light, 8%);
-    }
-
-    .style--accent & {
-        border-color: darken(@color--accent, 8%);
-    }
-
-    .style--dark & {
-        border-color: darken(@color--dark, 8%);
-    }
 	
     // Clickable item, class added via JS
 
@@ -428,6 +416,18 @@
 		.border-radius(5px 5px 0 0);
 		border: 1px solid fade(@color__p--text, 5%);
 		background-color: @color__primary;
+
+        .style--light & {
+            border-color: fade(@color__p--text, 5%);
+        }
+    
+        .style--accent & {
+            border-color: fade(@color--accent, 5%);
+        }
+    
+        .style--dark & {
+            border-color: fade(@color--dark, 5%);
+        }
 		
 		&:hover {
 			.box-shadow(0px 5px 50px fade(@color__p--text, 30%));
@@ -464,15 +464,15 @@
 		.border-radius(0 0 5px 5px);
 
         .style--light & {
-            background: darken(@color--light, 8%);
+            background: fade(@color__p--text, 5%);
         }
     
         .style--accent & {
-            background: darken(@color--accent, 8%);
+            background: fade(@color--accent, 5%);
         }
     
         .style--dark & {
-            background: darken(@color--dark, 8%);
+            background: fade(@color--dark, 5%);
         }
 	}
 	
@@ -504,7 +504,7 @@
         color: @color__ecomproductslist-product-title--text;
 
         .style--light & {
-            color: @contrast--light;
+            color: @color__ecomproductslist-product-title--text;
         }
 
         .style--accent & {
@@ -526,19 +526,11 @@
 // Featured Product
 
 .ecomfeaturedproducts .listing-title {
-    h2;
+    .heading--2;
     padding: 26px 70px;
 
-    @media @tablet-horizontal {
-        padding: 26px 40px;
-    }
-
-    @media @tablet {
-        padding: 20px;
-    }
-
     .style--light & {
-        color: @contrast--light;
+        color: @color__h2--text;
     }
 
     .style--accent & {
@@ -547,6 +539,14 @@
 
     .style--dark & {
         color: @contrast--dark;
+    }
+
+    @media @tablet-horizontal {
+        padding: 26px 40px;
+    }
+
+    @media @tablet {
+        padding: 20px;
     }
     
     // Column styles

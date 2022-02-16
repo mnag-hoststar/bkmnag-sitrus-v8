@@ -37,8 +37,6 @@
 	.image-link {
 		display: block;
 		width: 100%;
-		background-size: contain;
-		background-position: center;
 		background-color: @color__image--background;
 		height: 400px;
 
@@ -58,15 +56,15 @@
 		}
 
         .style--light & {
-            background: @color--light;
+            background-color: @color__image--background;
         }
 
         .style--accent & {
-            background: @color--accent;
+            background-color: @color--accent;
         }
 
         .style--dark & {
-            background: @color--dark;
+            background-color: @color--dark;
         }
 	}
 	
@@ -83,12 +81,8 @@
     border-top: 1px solid fade(@color__p--text, 20%);
     padding-top: 1em;
 
-    @media @tablet-horizontal {
-        overflow: hidden;
-    }
-
     .style--light & {
-        border-color: darken(@color--light, 10%);
+        border-color: fade(@color__p--text, 20%);
     }
 
     .style--accent & {
@@ -97,6 +91,10 @@
 
     .style--dark & {
         border-color: darken(@color--dark, 10%);
+    }
+
+    @media @tablet-horizontal {
+        overflow: hidden;
     }
 
     // Gallery Item
@@ -138,7 +136,10 @@
     margin: 0 0 0 auto;
     max-width: 45%;
 
-    .style--light &,
+    .style--light & {
+        background: @color__container--background;
+    }
+
     .style--accent &,
     .style--dark {
         background: transparent;

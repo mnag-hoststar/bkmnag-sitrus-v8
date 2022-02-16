@@ -18,18 +18,6 @@
     .make-font-a-little-smaller(@font__p--font-size);
     .make-font-smaller(@font__p--font-size);
     .make-font-a-lot-smaller(@font__p--font-size);
-
-    .style--light & {
-        background-color: @color--light;
-    }
-
-    .style--accent & {
-        background-color: @color--accent;
-    }
-
-    .style--dark & {
-        background-color: @color--dark;
-    }
 }
 
 // Avatar
@@ -53,22 +41,6 @@ a.twitter__account-link {
     .make-font-a-little-smaller(@font__h4--font-size);
     .make-font-smaller(@font__h4--font-size);
     .make-font-a-lot-smaller(@font__h4--font-size);
-}
-
-// Content
-
-.tweet-content * {
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
 }
 
 // Tweet Metadata
@@ -102,20 +74,4 @@ a.twitter__account-link {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.8em;
-}
-
-.tweet-metadata .via,
-.tweet-metadata a,
-.twitter__timestamp {
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
 }

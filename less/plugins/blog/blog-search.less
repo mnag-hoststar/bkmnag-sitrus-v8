@@ -13,7 +13,7 @@
 	background-color: @color__blogsearch--background;
 
 	.style--light & {
-        background-color: @color--light;
+        background-color: @color__blogsearch--background;
     }
 
     .style--accent & {
@@ -45,8 +45,8 @@
         .form-widget-background--spacing();
     
         .style--light & {
-            background: darken(@color--light, 7%);
-            border-color: darken(@color--light, 10%);
+            background: fade(@color__form--background, 7%);
+            border-color: fade(@color__form--border, 20%);
         }
     
         .style--accent & {

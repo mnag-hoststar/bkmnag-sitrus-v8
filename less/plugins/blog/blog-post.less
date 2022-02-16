@@ -73,7 +73,7 @@
 				margin-bottom: 0;
 			
 				.style--light & {
-					border-color: lighten(@color--light, 10%);
+					border-color: @color-text--lighter;
 				}
 			
 				.style--accent & {
@@ -105,13 +105,9 @@
 .post-tags {
 	padding: 1em 0;
 	border-bottom: 1px solid @color-text--lighter;
-	
-	@media @mobile {
-		display: block;
-	}
 
 	.style--light & {
-		border-color: lighten(@color--light, 10%);
+		border-color: @color-text--lighter;
 	}
 
 	.style--accent & {
@@ -120,6 +116,10 @@
 
 	.style--dark & {
 		border-color: lighten(@color--dark, 10%);
+	}
+	
+	@media @mobile {
+		display: block;
 	}
 }
 
