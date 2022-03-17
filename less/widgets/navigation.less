@@ -3,15 +3,9 @@
 // Logo & Company Name
 
 .template__company {
-	-webkit-flex: 1;
-	-ms-flex: 1;   
-    flex: 1;
-    margin: 10px 0;
+    margin: 0;
 	
 	@media @tablet {
-		-webkit-flex: 2;
-		-ms-flex: 2;  
-	    flex: 2;
 	    z-index: 3;
 	}
 	
@@ -22,7 +16,7 @@
 }
 
 .logo {
-	padding-right: 15px;
+	padding: 10px 15px 10px 0;
     font-size: 0;
     margin-left: 0;
 	
@@ -33,6 +27,7 @@
 
 .companyname {
     line-height: 0;
+	margin-right: 20px;
 
 	&__company-link {
 		margin: 0;
@@ -41,6 +36,7 @@
 		font-weight: @font__companyname--font-weight;
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
+		word-break: normal;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -56,15 +52,7 @@
 // Navigation
 
 .template__navigation {
-	-webkit-flex: 2;
-	-ms-flex: 2; 
-    flex: 2;
-    
-    @media @tablet {
-		-webkit-flex: 1;
-		-ms-flex: 1;   
-		flex: 1;
-    }
+    flex-grow: 1;
 }
 
 .widget[data-widget-type="extendednavigation"] {
@@ -215,10 +203,11 @@
 
 .navigation-list {
 	margin: 0;
+	font-size: 0;
 	
     @media @tablet {
 		margin: 0;
-		padding: 0 20px 20px;
+		padding: 10px 0 0;
 		text-align: center;
 	    background-color: @color__header--background;
 	}
@@ -248,10 +237,11 @@
 		background: @color__navigation-item--background;
 		text-transform: uppercase;
 		.transition (all, 0.5s, ease);
-        word-break: break-word;
+		word-break: break-word;
 		
 		@media @tablet {
-			padding: 0.5em 1em;
+			padding: 1em 1.5em;
+			line-height: 1.75em;
 		}
 		
 		&:hover {
@@ -279,11 +269,14 @@
 
 .navigation-item.folder {
 	> .item-name {
-		left: auto;
+		padding-right: 3em;
 
 		&:after {
-			right: 0.5em;
-			margin-left: 0.3em;
+			position: absolute;
+			top: 50%;
+			right: 1em;
+			margin-top: -0.5em;
+			margin-left: 0.5em;
 			width: 1em;
     		height: 1em;
 			line-height: 1em;
@@ -291,11 +284,20 @@
 			content: '\f107';
 			font-family: 'FontAwesome', sans-serif;
 			text-align: right;
+
+			@media @tablet {
+				position: static;
+				margin-top: 0;
+			}
 		}
 	}
 	
 	&.folder-open > .item-name {
 		color: @color__navigation--text;
+
+		&:hover {
+			color: @color__navigation--text--hover;
+		}
 	}
 }
 
@@ -305,55 +307,58 @@
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
 	.navigation-item.folder:active & {
+		position: absolute;
+		right: 0;
+		left: auto;
+		opacity: 1;
+    	overflow: visible;
+		max-width: 500px;
+		min-width: 300px;
     	overflow: hidden;
 		opacity: 0;
     	margin: 0;
-		padding: 0.5em 1em;
-		height: 0;
-		min-width: 300px;
-		max-width: 500px;
-		position: absolute;
-		right: 0;
-		background-color: @color__navigation-list--background;
-		overflow: visible;
+		height: auto;
+		padding: 1em 1.5em;
 		text-align: center;
-		.transition(opacity, 0s);
+		background-color: darken(@color__header--background, 3%);
+		.box-shadow(0px 5px 20px 0px fade(darken(@color__header--background, 10%), 15%));
 
 		@media @tablet {
 			position: static;
 			margin: 0;
 			padding: 0;
-			background-color: transparent;
 			.box-shadow(none);
+			width: auto;
+			max-width: none;
+			min-width: auto;
 		}
 	}
 	
 	.navigation-item.folder.folder-open & {
-    	overflow: visible;
 		display: block;
-		opacity: 1;
-		height: auto;
-		.transition(opacity);
-		background-color: darken(@color__navigation-list--background, 10%);
+	}
+}
 
-		@media @tablet {
-			position: static;
-			margin: 0 0 1em;
-			padding: 0;
-		}
+.navigation-item.folder {
+	&.folder-open:hover .navigation-list--children,
+	&.folder-open:active .navigation-list--children,
+	&.folder-open .navigation-list--children {
+		opacity: 1;
 	}
 }
 
 // Navigation Folder Submenu Single Item
 
 .navigation-item--child {
-
 	@media @tablet {
 		display: block;
 	}
 
 	.item-name {
 		color: @color__navigation--text;
+		border-bottom: 0;
+		padding: 1em 1.5em;
+		line-height: 1.8em;
 		
 		&:hover {
 			color: @color__navigation--text--hover;
@@ -368,13 +373,5 @@
 		&:hover {
 			color: @color__navigation--text--hover;
 		}
-	}
-}
-
-.navigation-item.folder {
-	&.folder-open:hover .navigation-list--children,
-	&.folder-open:active .navigation-list--children,
-	&.folder-open .navigation-list--children {
-		opacity: 1;
 	}
 }
