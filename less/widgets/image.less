@@ -1,28 +1,5 @@
 // Image
 
-// Conditional Mixins
-
-.image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
-	padding: 0;
-}
-
-// Image
-
-.widget[data-name="image"] {
-	.image-widget-background--spacing();
-	background: @color__image--background;
-}
-
-// Caption
-
-.image-caption--spacing() when not (@color__image--background = @color__body--background) {
-	margin-bottom: 0;
-}
-
-.imagewidget__caption {
-	.image-caption--spacing();
-}
-
 // Image Title
 
 .image-title {

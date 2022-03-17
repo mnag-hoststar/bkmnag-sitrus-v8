@@ -209,28 +209,6 @@ u {
 	border-bottom: 1px solid lighten(@color__p--text, 20%);
 }
 
-// Label
-
-label:not(.clicktocall__label), .label-text {
-	font-family: @font__h4--font-family;
-	font-size: 0.9em;
-	color: @color-text--faded;
-	word-wrap: normal;
-    hyphens: none;
-
-    .style--light & {
-	    color: @color-text--faded !important;
-	}
-
-	.style--accent & {
-	    color: fade(@contrast--accent, 60%) !important;
-	}
-
-	.style--dark & {
-	    color: fade(@contrast--dark, 60%) !important;
-	}
-}
-
 // Span
 
 span {
@@ -240,12 +218,15 @@ span {
 // Link
 
 a, .link {
-	text-decoration: none;
-	.transition();
-
-	&, &:hover {
-        text-decoration: none;
-    }
+	&,
+	[data-name="row"] [data-name^="content"] &:not(.contentgroup__link) {
+		text-decoration: none;
+		.transition();
+	
+		&, &:hover {
+			text-decoration: none;
+		}
+	}
 
 	&[class] {
 		margin: 0;
@@ -257,6 +238,7 @@ a, .link {
 		}
 	}
 
+	&,
 	[data-name="content"] & {
 		display: inline;
 		color: @color-highlight;
@@ -329,12 +311,13 @@ small {
 pre, code {
 	display: block;
 	margin: 1em 0;
-	padding: 0.5em 1em;
+	padding: 1em;
 	border: none;
 	.border-radius(0);
 	background-color: @color-text--lightest;
 	overflow: auto;
 	font-family: monospace;
+	font-size: @font__p--font-size;
 
 	.style--light & {
 		background-color: @color-text--lightest;
@@ -350,7 +333,7 @@ pre, code {
 }
 
 code {
-	border-left: 5px solid @color-highlight;
+	border-left: 1px solid @color-highlight;
 
 	.style--light & {
 		border-color: @color-highlight;
@@ -479,10 +462,6 @@ blockquote {
 		&:after {
 			display: none;
 		}
-	}
-
-	[data-name"row"] & {
-		padding: 12px;
 	}
 }
 

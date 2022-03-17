@@ -1,21 +1,9 @@
 // Blog Posts List
 
-// Conditional Mixins
-
-.blogpostlist-article-background--spacing() when not (@color__blogpostlist--background = @color__blogpostlist-article--background) {
-    padding: 2em 0;
-}
-
-.blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
-    padding: 1em 0;
-}
-
 // All posts
 
 .widget[data-name="blogpostlist"] {
     background-color: @color__blogpostlist--background;
-    .blogpostlist-article-background--spacing();
-    .blogpostlist-widget-background--spacing();
 
     .style--light & {
         background-color: @color__blogpostlist--background;
@@ -36,21 +24,50 @@
     &__post {
         &-article {
             position: relative;
-            border: 1px solid fade(@color__form--border, 20%);
             margin-bottom: 50px;
-            .form-widget-background--spacing();
+            padding: 2em;
             .border-radius(5px);
-
+            border: 1px solid fade(@color__p--text, 50%);
+            background-color: @color__primary;
+            overflow: hidden;
+    
             .style--light & {
-                border-color: fade(@color__form--border, 20%);
+                border-color: fade(@color__p--text, 50%);
+                background-color: @color__primary;
             }
-
+        
             .style--accent & {
                 border-color: darken(@color--accent, 10%);
+                background-color: fade(darken(@color--accent, 10%), 20%);
+            }
+        
+            .style--dark & {
+                border-color: darken(@color--dark, 10%);
+                background: fade(darken(@color--dark, 10%), 20%);
+            }
+		
+            &:hover {
+                .box-shadow(0px 5px 50px fade(@color__p--text, 30%));
+    
+                .style--light & {
+                    .box-shadow(0px 5px 50px fade(@color__p--text, 30%));
+                }
+        
+                .style--accent & {
+                    .box-shadow(0px 5px 50px darken(@color--accent, 10%));
+                }
+            
+                .style--dark & {
+                    .box-shadow(0px 5px 50px darken(@color--dark, 10%));
+                }
             }
 
-            .style--dark & {
-                border-color: lighten(@color--dark, 12%);
+            @media @mobile {
+                margin-bottom: 40px;
+            }
+
+            .responsivecolumns & {
+                margin-bottom: 40px;
             }
         }
 
@@ -74,12 +91,17 @@
             .make-line-height-a-little-smaller(@font__p--line-height);
             .make-line-height-smaller(@font__p--line-height);
             .make-line-height-a-lot-smaller(@font__p--line-height);
+
+            .blogpostlist__post-image + & {
+                margin-top: 1em;
+            }
         }
         
         &-title {
             .heading--3;
             padding: 0;
-            margin-top: 1em;
+            margin-top: -0.5em;
+            margin-bottom: 0.25em;
             color: @color__p--text;
         
             .style--light & {

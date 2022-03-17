@@ -17,8 +17,19 @@
     border-collapse: separate;
     width: 100%;
     margin: 0;
+    border-top: none;
     border-bottom: 5px solid fade(@color__p--text, 20%);
     margin-bottom: 2em;
+
+    tr {
+		@media @basketsummary-medium {
+            border-bottom: 1px solid fade(@color__p--text, 40%);
+		}
+
+        &:last-child td:last-child {
+            border-bottom: none;
+        }
+    }
 	
     // Table and Cells Reset
 
@@ -31,11 +42,14 @@
         padding-top: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid fade(@color__p--text, 20%);
-		
+
+		@media @basketsummary-medium {
+            border-bottom: none;
+		}
     }
 	
 	&, .table-row, .cell, .summary-body {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			display: block;
 		}
 	}
@@ -43,16 +57,11 @@
     // Row Heading
 
     .table-row--heading {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             display: none;
 		}
 			
         .cell {
-            padding: 1.6em 0;
-            font-family: @font__h1--font-family;
-            text-transform: uppercase;
-            color: @color__p--text;
-
             &:nth-last-of-type(-n+2) {
                 text-align: right;
             }
@@ -62,23 +71,25 @@
     // Product Item Row
 	
 	.table-row {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			overflow: hidden;
-			background-color: @color__secondary;
-			margin-bottom: 10px;
-			.clearfix();
-			border-bottom: none;
+            border-bottom: 1px solid fade(@color__p--text, 40%);
 		}
+
+        &:last-child {
+			border-bottom: none;
+        }
 	}
 	
     // Cell Image
 
     .cell--image {
         width: 126px;
-        padding-left: 10px;
+        padding: 10px;
 		
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			width: auto;
+            padding: 20px 10px 0;
 		}
 	}
 
@@ -87,27 +98,27 @@
     .cell--title {
         width: auto;
         padding-right: 10px;
-        padding-left: 16px;
-
-    }
-
-    // Item Title
-
-    .summary-item-title {
-		.heading--4;
+        padding-left: 10px;
+        text-align: left;
+		
+		@media @basketsummary-medium {
+            text-align: center;
+		}
     }
 
 	// Item Link
 
 	.summary-item-link {
 		color: @color__p--text;
+        font-weight: 600;
 	}
 	
 	// Cell Total, Cell Price, Cell Quantity
 
 	.cell--price,
-    .cell--total, .cell--quantity {
-		@media @basketsummary-medium, @mobile {
+    .cell--total,
+    .cell--quantity {
+		@media @basketsummary-medium {
 			&:before {
 				content: attr(data-title);
 				display: block;
@@ -123,9 +134,8 @@
         padding: 0 16px 0 0;
         width: 10%;
         min-width: 100px;
-        border-right: 1px solid fade(@color__p--text, 20%);
 		
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             width: auto;
             border-right: none;
             padding: 1em;
@@ -141,7 +151,7 @@
 		font-size: 16px;
 		background-color: transparent;
 
-        @media @basketsummary-medium, @mobile {
+        @media @basketsummary-medium {
             max-width: none;
         }
 
@@ -153,7 +163,7 @@
 			line-height: 26px;
 			text-align: center;
 			
-            @media @basketsummary-medium, @mobile {
+            @media @basketsummary-medium {
                 line-height: 20px;
             }
 		}
@@ -171,11 +181,10 @@
     .cell--total {
         text-align: right;
 
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             float: left;
             width: 50%;
             padding: 1em;
-            background-color: darken(@color__container--background, 8%) !important;
         }
 	}
 	
@@ -184,7 +193,7 @@
     }
 
     .cell--price {
-        @media @basketsummary-medium, @mobile {
+        @media @basketsummary-medium {
             text-align: left;
             clear: left;
         }
@@ -209,6 +218,10 @@
         background-color: @color__image--background;
         background-size: contain;
 
+        @media @basketsummary-medium {
+            width: 100%;
+        }
+
         // Image
 
         .image {
@@ -228,7 +241,7 @@
         padding: 0;
 		color: @color__p--text;
 
-         @media @basketsummary-medium, @mobile {
+         @media @basketsummary-medium {
             text-align: center;
         }
 	}
@@ -239,7 +252,7 @@
 .summary-form {
     text-align: right;
 
-    @media @basketsummary-medium, @mobile {
+    @media @basketsummary-medium {
         text-align: center;
     }
 }

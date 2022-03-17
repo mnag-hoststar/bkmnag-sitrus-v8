@@ -6,7 +6,7 @@
 	-webkit-flex: 1;
 	-ms-flex: 1;   
     flex: 1;
-    margin: 0;
+    margin: 10px 0;
 	
 	@media @tablet {
 		-webkit-flex: 2;
@@ -218,7 +218,7 @@
 	
     @media @tablet {
 		margin: 0;
-		padding: 10px 0;
+		padding: 0 20px 20px;
 		text-align: center;
 	    background-color: @color__header--background;
 	}
@@ -237,7 +237,7 @@
 	
 	.item-name {
 		position: relative;
-		padding: 20px 28px;
+		padding: 15px 20px;
 		margin: 0;
 		font-family: @font__navigation--font-family;
 		font-size: @font__navigation--font-size;
@@ -251,9 +251,7 @@
         word-break: break-word;
 		
 		@media @tablet {
-			padding: 0.5em 0;
-			font-size: @font__navigation--font-size * 1.2;
-			line-height: @font__navigation--line-height * 1.2;
+			padding: 0.5em 1em;
 		}
 		
 		&:hover {
@@ -281,6 +279,8 @@
 
 .navigation-item.folder {
 	> .item-name {
+		left: auto;
+
 		&:after {
 			right: 0.5em;
 			margin-left: 0.3em;
@@ -302,21 +302,22 @@
 // Navigation Folder Submenu
 
 .navigation-list--children {
-	
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
 	.navigation-item.folder:active & {
     	overflow: hidden;
 		opacity: 0;
     	margin: 0;
+		padding: 0.5em 1em;
 		height: 0;
+		min-width: 300px;
+		max-width: 500px;
 		position: absolute;
-		padding: 0.5em 0;
+		right: 0;
 		background-color: @color__navigation-list--background;
 		overflow: visible;
 		text-align: center;
 		.transition(opacity, 0s);
-		.box-shadow(0px 5px 20px 0px fade(#000000, 15%));
 
 		@media @tablet {
 			position: static;
@@ -333,10 +334,11 @@
 		opacity: 1;
 		height: auto;
 		.transition(opacity);
+		background-color: darken(@color__navigation-list--background, 10%);
 
 		@media @tablet {
 			position: static;
-			margin: 0 0 0.5em;
+			margin: 0 0 1em;
 			padding: 0;
 		}
 	}
@@ -352,19 +354,20 @@
 
 	.item-name {
 		color: @color__navigation--text;
-		line-height: 3em;
-		border-bottom: 0;
 		
 		&:hover {
 			color: @color__navigation--text--hover;
-			border-bottom: 0;
 		}
 	}
 
 	// Selected Folder Item
 
 	&.selected .item-name {
-		color: @color__navigation--text--hover;
+		color: fade(@color__navigation--text, 60%);
+		
+		&:hover {
+			color: @color__navigation--text--hover;
+		}
 	}
 }
 

@@ -1,5 +1,9 @@
 // Buttons
 
+.buttonwidget {
+    padding: 2em 0;
+}
+
 .button,
 a.button,
 .link-button,
@@ -51,7 +55,6 @@ a.contentgroup__link {
     &:hover {
         background-color: @color__button--background--hover;
         color: @color__button--text--hover;
-        .transition (all, 0.5s, ease);
 
         .style--light & {
             background-color: @color__button--background--hover;
@@ -68,6 +71,38 @@ a.contentgroup__link {
             color: @contrast--accent;
         }
     }
+
+    span {
+        color: @color__button--text;
+
+        .style--light & {
+            color: @color__button--text;
+        }
+    
+        .style--accent & {
+            color: @contrast--dark;
+        }
+    
+        .style--dark & {
+            color: @contrast--accent;
+        }
+        
+        &:hover {
+            color: @color__button--text--hover;
+    
+            .style--light & {
+                color: @color__button--text--hover;
+            }
+    
+            .style--accent & {
+                color: @contrast--dark;
+            }
+    
+            .style--dark & {
+                color: @contrast--accent;
+            }
+        }
+    }
 }
 
 .button,
@@ -79,23 +114,16 @@ a.button,
 .paypalbuynow .button {
     &:before,
     &:after {
+        position: relative;
+        bottom: -0.15em;
         font-size: 1.5em;
         font-weight: 400;
     }
-    
-    &:before {
-        margin-right: 0.5em;
-    }
-    
-    &:after {
-        margin-left: 0.5em;
-    }
 }
 
-// Click to Call
 
-.clicktocall .label {
-    margin-left: -0.5em;
+.userregistration fieldset .userregistrationbtn {
+    margin-top: 20px;
 }
 
 // Dropbox

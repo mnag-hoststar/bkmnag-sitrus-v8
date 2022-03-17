@@ -21,6 +21,22 @@
     top: auto !important;
 }
 
+body:not(.ua-mobile-webkit):not(.row-add-mode) .row-overlay:hover::before,
+body:not(.ua-mobile-webkit):not(.row-add-mode) .row-overlay:hover::after,
+body:not(.row-add-mode) .row-overlay.hover::before, body:not(.row-add-mode) .row-overlay.hover::after,
+body:not(.ua-mobile-webkit):not(.row-add-mode) .widget[data-name="row"]:hover .row-overlay::before,
+body:not(.ua-mobile-webkit):not(.row-add-mode) .widget[data-name="row"]:hover .row-overlay::after,
+body:not(.ua-mobile-webkit):not(.row-add-mode) .widget[data-name="row"].hover .row-overlay::before,
+body:not(.ua-mobile-webkit):not(.row-add-mode) .widget[data-name="row"].hover .row-overlay::after,
+body:not(.row-add-mode) .widget[data-name="row"]:hover .row-overlay::before, body:not(.row-add-mode) .widget[data-name="row"]:hover .row-overlay::after,
+body:not(.row-add-mode) .widget[data-name="row"].hover .row-overlay::before, body:not(.row-add-mode) .widget[data-name="row"].hover .row-overlay::after,
+body.ua-mobile-webkit:not(.row-add-mode) #page-zones__main :nth-child(odd) .row-overlay::before,
+body.ua-mobile-webkit:not(.row-add-mode) #page-zones__main :nth-child(odd) .row-overlay::after,
+body.ua-mobile-webkit:not(.row-add-mode) #page-zones__main :nth-child(even) .row-overlay::before,
+body.ua-mobile-webkit:not(.row-add-mode) #page-zones__main :nth-child(even) .row-overlay::after {
+	background: transparent !important;
+}
+
 // Header
 
 .template__header {
@@ -36,6 +52,7 @@
     align-items: center;
     -webkit-align-self: center;
     align-self: center;
+	max-width: 1240px;
 
     @media @tablet {
         padding: 10px 20px 10px 10px;
@@ -102,11 +119,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 #migrated .row:not(.row--width-no-padding) .row__container, #migrated [data-widget-type="pagetitle"],
 .container {
 	width: 90%;
-	max-width: 1140px;
+	max-width: 1240px;
     margin: 0 auto;
-	padding: 20px;
     box-sizing: border-box;
-    background-color: @color__container--background;
 
 	header &,
 	footer & {

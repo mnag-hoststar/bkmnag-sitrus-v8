@@ -1,8 +1,16 @@
 // Yelp Review
 
 .yelpreview {
+	&__review-list {
+		padding: 0;
+		margin: 20px 0;
+	}
+
 	&__review-item {
 		position: relative;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 40px;
 	}
 	
 	&__review-header {
@@ -12,7 +20,6 @@
 	&__review-title {
 		.heading--4;
 		padding: 0 1em 0 0;
-		.twitter__account-link--spacing();
 	}
 
 	&__author-label {
@@ -31,22 +38,23 @@
 	    .style--dark & {
 	        color: darken(@color--accent, 20%);
 	    }
+
+		@media @mobile {
+			display: inline-block;
+			font-size: 1em;
+			margin: 0.5em 0.5em 0.5em 0;
+		}
 	}
 	
 	&__review-author {
     	letter-spacing: 1px;
 		font-size: 0.8em;
-	}
 
-	&__review-list {
-		padding: 0;
-		margin: 0;
-	}
-
-	&__review-item {
-		list-style: none;
-		padding: 0;
-		margin: 0;
+		@media @mobile {
+			display: inline-block;
+			font-size: 1em;
+			margin: 0.5em 0.5em 0.5em 0;
+		}
 	}
 
 	&__review-excerpt {
@@ -58,7 +66,9 @@
 		}
 
 		.review-link {
-			.link;
+			display: inline-block;
+			margin: 0.5em 0;
+			border-bottom: 1px solid;
 		}
 	}
 

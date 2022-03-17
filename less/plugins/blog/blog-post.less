@@ -11,14 +11,15 @@
 	}
 }
 
-.blogpost__post-article {
-	position: relative;
-	margin-bottom: 2em;
-}
-
 // Image
 
 .blogpost {
+	.blogpost__post-article {
+		position: relative;
+		overflow: auto;
+		margin-bottom: 4em;
+	}
+
 	.image-link {
 		display: block;
 		padding-bottom: 30%;
@@ -51,6 +52,12 @@
 			float: left;
 			width: 70%;
 			padding-right: 4em;
+			
+			@media @tablet {
+				float: none;
+				width: auto;
+				padding-right: 0;
+			}
 		}
 	
 		&-title {
@@ -64,6 +71,12 @@
 		&-footer {
 			float: right;
 			width: 30%;
+			
+			@media @tablet {
+				float: none;
+				width: auto;
+				margin-top: 4em;
+			}
 		
 			// Post Timestamp
 			
@@ -123,34 +136,41 @@
 	}
 }
 
-.category-title,
-.tags-title {
-	display: inline-block;
-	vertical-align: middle;
+.post-category {
+	border-bottom: none;
+	padding-bottom: 1em 0 1.5em;
 }
 
-.post-category {
-	@media @mobile {
-    	padding: 0;
-	}
+.category-title,
+.tags-title {
+	display: block;
+    padding: 0;
+    font-weight: 400;
+    margin-bottom: 0.5em;
 }
 
 .tag-list {
 	vertical-align: bottom;
+	
+	li {
+		margin: 0;
+		padding: 0;
+	}
 }
 
 .post-tags {
     width: 100%;
 	
 	@media @mobile {
-		margin-top: 1em;
     	width: auto;
 	}
 }
 
-a.blogpost__category-link,
-a.blogpost__tag-link {
-    hyphens: none;
+.ecom-product-tag,
+.ecom-product-category {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
 }
 
 // Sharing Links
