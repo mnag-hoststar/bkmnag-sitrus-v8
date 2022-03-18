@@ -124,6 +124,12 @@ h6, .heading--6 {
 	.make-line-height-a-lot-smaller(@font__h4--line-height, 0.7, 0.6);
 }
 
+// Page Title Widget
+
+.pagetitle-text {
+    .heading--1;
+}
+
 // Normal Text
 
 p, .paragraph {
@@ -311,7 +317,7 @@ small {
 pre, code {
 	display: block;
 	margin: 1em 0;
-	padding: 1em;
+	padding: 0.5em 1em;
 	border: none;
 	.border-radius(0);
 	background-color: @color-text--lightest;
@@ -356,7 +362,7 @@ ul {
 
 	li {
 		padding: 0 0 0 0.5em;
-		margin: 0 0 .5em 0;
+		margin: 0 0 0.5em 0;
 
 		@media @tablet {
 			padding-left: 0;
@@ -372,7 +378,7 @@ ul {
 	li {
 		position: relative;
 		padding-left: 3.5em;
-		margin-bottom: .5em;
+		margin-bottom: 0.5em;
 		list-style-type: none;
 
 		// Custom Numbers
@@ -471,14 +477,14 @@ blockquote {
 .blogpost__post-body,
 .ecomproduct__product-body {
 	ul {
-		margin: 0.5em 0 0.5em 2em;
+		margin: 1em 0 1em 2em;
 		padding-left: 0;
 		list-style: none;
 	
 		li {
 			position: relative;
 			padding: 0;
-			margin: 0 0 0.25em 0;
+			margin: 0 0 0.5em 0;
 	
 			&:before {
 				position: absolute;
@@ -489,14 +495,13 @@ blockquote {
 	}
 	
 	ol {
-		margin: 0.5em 0;
+		margin: 1em 0;
 		padding-left: 0;
 		counter-reset: ordered-counter;
 	
 		li {
 			position: relative;
-			padding-left: 2em;
-			margin: 0 0 0.25em 0;
+			margin: 0 0 0.5em 0;
 			list-style-type: none;
 	
 			// Custom Numbers
@@ -516,6 +521,29 @@ blockquote {
 			}
 		}
 	}
+}
+
+// Line Widget
+
+.line {
+    line-height: 0;
+}
+
+hr.line__rule {
+	height: 3px;
+	background-color: fade(@color__p--text, 60%);
+
+    .style--light & {
+        background-color: fade(@color__p--text, 60%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 12%);
+    }
+
+    .style--dark & {
+        background-color: darken(@color--accent, 12%);
+    }
 }
 
 // Highlighted Text

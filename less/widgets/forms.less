@@ -117,6 +117,10 @@ textarea,
     .transition();
     .appearance(none);
     border: 1px solid @color__form--border;
+	
+	.make-line-height-a-little-smaller(@font__button--line-height);
+	.make-line-height-smaller(@font__button--line-height);
+	.make-line-height-a-lot-smaller(@font__button--line-height);
 
     .style--light & {
         border-color: @color__form--border;
@@ -163,9 +167,10 @@ textarea {
     // Select
 
     select {
-        padding: 0 2em 0 1em;
+        padding: 0 2.5em 0 1em;
         .appearance(none);
         width: 100%;
+        text-overflow: ellipsis;
 
         &::-ms-expand {
             display: none;
@@ -299,7 +304,7 @@ textarea {
                     line-height: @font__p--line-height;
                     height: @font__p--line-height - 4px;
                     width: @font__p--line-height - 4px;
-					background-color: @color__body--background;
+					background-color: @color__container--background;
 					border: 1px solid @color__form--border;
 					min-width: auto;
 					max-height: none;

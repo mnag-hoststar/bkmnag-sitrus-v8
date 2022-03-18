@@ -121,7 +121,7 @@
             "color__secondary": "@color-swatch3"
         },
         "site": {
-            "color__body--background": "#fff",
+            "color__body--background": "#1e2b2f",
             "color__container--background": "#fff",
             "color__link--text": "#63b29f",
             "font__companyname--font-family": "@font-swatch10-font-family",
@@ -168,7 +168,7 @@
             "color__header--border": "#e6e6e6"
         },
         "footer": {
-            "color__footer--background": "#1e2b2f",
+            "color__footer--background": "@color__body--background",
             "color__footer--border": "#fff"
         },
         "navigation": {

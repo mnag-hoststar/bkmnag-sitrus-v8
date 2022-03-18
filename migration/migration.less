@@ -58,7 +58,15 @@
 
     // Add spacing to the top of a widget when it follows a row
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
-        margin-top: 20px; // Widget margin bottom
+        margin-top: 70px; // Widget margin bottom
+
+        @media @tablet {
+            margin-top:  40px;
+        }
+        
+        @media @mobile {
+            margin-top: 30px;
+        }
     }
 
     // Re-add widget spacing inside of rows

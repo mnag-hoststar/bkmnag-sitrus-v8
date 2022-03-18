@@ -74,7 +74,7 @@ body.ua-mobile-webkit:not(.row-add-mode) #page-zones__main :nth-child(even) .row
 
 html, body {
     background-color: @color__body--background;
-    width: -webkit-calc(100% - 0px);
+	min-height: 100vh;
 
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
@@ -103,6 +103,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .template__content {
 	padding: 5% 0;
+	background-color: @color__container--background;
 
 	@media @tablet {
 		padding: 2.5% 0;
@@ -134,14 +135,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .template__footer {
     background-color: @color__footer--background;
-    padding: 4em 0;
+    padding: 2em 0;
 	.footer-border-removal();
 
 	// Widget
 
 	h1, h2, h3, h4, h5, p, .profile a {
 		color: @color__footer--border;
-		padding-bottom: 1em;
 	}
 
 	.profile p {
@@ -185,4 +185,71 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 .widget__item {
     font-size: 0;
+}
+
+// Standard Widgets
+
+.main-content .widget {
+    margin: 0 70px 70px;
+
+    @media @tablet {
+        margin: 0 40px 40px;
+    }
+    
+    @media @mobile {
+        margin: 0 30px 30px;
+    }
+}
+
+// Responsive Column Widgets
+
+.widget[data-name="responsivecolumns"] {
+    .widget {
+        width: 100%;
+        
+        @media @mobile {
+            margin: 0 0 30px;
+        }
+    }
+
+    .widget[data-name="content"] {
+        @media @mobile {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.column {
+    @media @mobile {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Full Width Widgets
+
+.widget[data-name="responsiveslideshow"],
+.widget[data-widget-type="responsiveslideshow"],
+.widget[data-name="youtube"],
+.widget[data-name="map"],
+.widget[data-name="youtube"],
+.widget[data-name="gallery"],
+.widget[data-name="blogpost"],
+.widget[data-widget-type="blogpost"],
+.widget[data-name="blogpostlist"],
+.widget[data-name="ecomproductslist"],
+.widget[data-name="ecomfeaturedproducts"],
+.widget[data-name="ecomproduct"],
+.widget[data-name="line"],
+.widget[data-name="image"] {
+    margin-top: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
