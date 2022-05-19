@@ -1,0 +1,98 @@
+// Widgets
+
+// Standard Widgets
+
+.main-content .widget {
+    margin: 0 @value__widget--spacing--desktop @value__widget--spacing--desktop;
+
+    @media @bp-global-medium {
+        margin: 0 @value__widget--spacing--laptop @value__widget--spacing--laptop;
+    }
+    @media @tablet {
+        margin: 0 @value__widget--spacing--tablet @value__widget--spacing--tablet;
+    }
+    @media @mobile {
+        margin: 0 @value__widget--spacing--mobile @value__widget--spacing--mobile;
+    }
+}
+
+// Responsive Column Widgets
+
+.widget[data-name="responsivecolumns"] {
+    .widget {
+        width: 100%;
+        @media @mobile {
+            margin: 0 0 30px;
+        }
+    }
+
+    .widget[data-name="content"] {
+
+        @media @mobile {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.column {
+    @media @mobile {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Full Width Widgets
+
+.widget[data-name="responsiveslideshow"],
+.widget[data-widget-type="responsiveslideshow"],
+.widget[data-name="youtube"],
+.widget[data-name="map"],
+.widget[data-name="youtube"],
+.widget[data-name="gallery"],
+.widget[data-name="blogpost"],
+.widget[data-widget-type="blogpost"],
+.widget[data-name="blogpostlist"],
+.widget[data-name="ecomproductslist"],
+.widget[data-name="ecomfeaturedproducts"],
+.widget[data-name="ecomproduct"],
+.widget[data-name="line"],
+.widget[data-name="image"] {
+    margin-top: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Line Widget
+
+.line {
+    line-height: 0;
+}
+
+hr.line__rule {
+	height: 3px;
+	background-color: fade(@color__p--text, 60%);
+
+    .style--light & {
+        background-color: darken(@color--light, 12%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 12%);
+    }
+
+    .style--dark & {
+        background-color: darken(@color--accent, 12%);
+    }
+}
+
+// Page Title Widget
+
+.pagetitle-text {
+	.heading--1;
+}
