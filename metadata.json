@@ -1,11 +1,11 @@
 {
 	"name":"Sitrus 2.0",
     "widgetVersion": 2,
-	"thumbnail":"images/thumbnail.png",
-	"screenshot":"images/screenshot.jpg",
-	"templateType":"standard",
-    "pageTypes": ["home"],
     "versionTenCompatible": 1,
+	"thumbnail":"images/thumbnail.png",
+	"templateType":"standard",
+    "pageTypes": [ "home" ],
+	"screenshot":"images/screenshot.jpg",
     "images":[
         "images/feature-bg.jpg",
         "images/gallery/1.jpg",
