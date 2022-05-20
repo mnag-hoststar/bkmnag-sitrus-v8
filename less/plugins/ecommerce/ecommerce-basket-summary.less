@@ -1,9 +1,5 @@
 // Basket Summary
 
-// Variables
-
-@basketsummary-medium: ~"only screen and (max-width: 680px)";
-
 // Title
 
 .summary-title {
@@ -22,7 +18,7 @@
     margin-bottom: 2em;
 
     tr {
-		@media @basketsummary-medium {
+		@media @mobile {
             border-bottom: 1px solid fade(@color__p--text, 40%);
 		}
 
@@ -43,21 +39,40 @@
         padding-bottom: 10px;
         border-bottom: 1px solid fade(@color__p--text, 20%);
 
-		@media @basketsummary-medium {
+		@media @mobile {
             border-bottom: none;
 		}
     }
 	
 	&, .table-row, .cell, .summary-body {
-		@media @basketsummary-medium {
+		@media @mobile {
 			display: block;
 		}
+	}
+	
+    // Product Item Row
+	
+	.table-row {
+        @media only screen and (max-width: 700px) {
+            display: table;
+            border-bottom: none;
+        }
+
+		@media @mobile {
+            display: block;
+			overflow: hidden;
+            border-bottom: 1px solid fade(@color__p--text, 40%);
+		}
+
+        &:last-child {
+			border-bottom: none;
+        }
 	}
 
     // Row Heading
 
     .table-row--heading {
-		@media @basketsummary-medium {
+        @media only screen and (max-width: 700px) {
             display: none;
 		}
 			
@@ -68,26 +83,13 @@
         }
     }
 	
-    // Product Item Row
-	
-	.table-row {
-		@media @basketsummary-medium {
-			overflow: hidden;
-            border-bottom: 1px solid fade(@color__p--text, 40%);
-		}
-
-        &:last-child {
-			border-bottom: none;
-        }
-	}
-	
     // Cell Image
 
     .cell--image {
         width: 126px;
         padding: 10px;
 		
-		@media @basketsummary-medium {
+		@media @mobile {
 			width: auto;
             padding: 20px 10px 0;
 		}
@@ -101,7 +103,7 @@
         padding-left: 10px;
         text-align: left;
 		
-		@media @basketsummary-medium {
+		@media @mobile {
             text-align: center;
 		}
     }
@@ -118,7 +120,7 @@
 	.cell--price,
     .cell--total,
     .cell--quantity {
-		@media @basketsummary-medium {
+		@media @mobile {
 			&:before {
 				content: attr(data-title);
 				display: block;
@@ -135,8 +137,10 @@
         width: 10%;
         min-width: 100px;
 		
-		@media @basketsummary-medium {
+		@media @mobile {
             width: auto;
+            max-width: 170px;
+            margin: 0 auto;
             border-right: none;
             padding: 1em;
             border: none;
@@ -151,7 +155,7 @@
 		font-size: 16px;
 		background-color: transparent;
 
-        @media @basketsummary-medium {
+        @media @mobile {
             max-width: none;
         }
 
@@ -163,7 +167,7 @@
 			line-height: 26px;
 			text-align: center;
 			
-            @media @basketsummary-medium {
+            @media @mobile {
                 line-height: 20px;
             }
 		}
@@ -182,7 +186,7 @@
         text-align: right;
         width: 15%;
 
-		@media @basketsummary-medium {
+		@media @mobile {
             float: left;
             width: 50%;
             padding: 1em;
@@ -191,12 +195,15 @@
 	
     .cell--total {
         text-align: right;
+
+		@media @mobile {
+            text-align: center;
+        }
     }
 
     .cell--price {
-        @media @basketsummary-medium {
-            text-align: left;
-            clear: left;
+        @media @mobile {
+            text-align: center;
         }
     }
 
@@ -219,7 +226,7 @@
         background-color: @color__image--background;
         background-size: contain;
 
-        @media @basketsummary-medium {
+        @media @mobile {
             width: 100%;
         }
 
@@ -242,7 +249,7 @@
         padding: 0;
 		color: @color__p--text;
 
-         @media @basketsummary-medium {
+         @media @mobile {
             text-align: center;
         }
 	}
@@ -253,9 +260,17 @@
 .summary-form {
     text-align: right;
 
-    @media @basketsummary-medium {
+    @media @mobile {
         text-align: center;
     }
+}
+
+.ecombasketsummary__continue-shopping {
+    margin-right: 10px;
+
+	@media @mobile {
+        margin-right: 0;
+	}
 }
 
 .ecombasketsummary__continue-shopping,
