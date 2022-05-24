@@ -111,17 +111,17 @@ input[type="password"],
 textarea,
 .select-wrap select {
     padding: 0.6em 1em;
-    height: @font__button--line-height !important;
-    font-size: @font__p--font-size * 0.9;
+    height: @font__button--line-height+22px !important;
+    font-size: @font__button--font-size;
     background-color: @color__container--background;
     border: 1px solid @color__form--border;
     color: @color__p--text;
     .transition();
     .appearance(none);
-	
-	.make-line-height-a-little-smaller(@font__button--line-height);
-	.make-line-height-smaller(@font__button--line-height);
-	.make-line-height-a-lot-smaller(@font__button--line-height);
+    
+    .make-font-a-little-smaller(@font__button--font-size);
+    .make-font-smaller(@font__button--font-size);
+    .make-font-a-lot-smaller(@font__button--font-size);
 
     .style--light & {
         border-color: @color__form--border;
@@ -467,10 +467,12 @@ textarea {
 		
             @media @mobile {
                 display: block;
+                padding-right: 0;
             }
     
             .responsivecolumns & {
                 display: block;
+                padding-right: 0;
             }
         }
         

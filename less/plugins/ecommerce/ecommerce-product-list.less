@@ -19,11 +19,28 @@
     
     .fieldset--search, 
     .fieldset--filters {
+        @media @mobile {
+            background-color: transparent;
+            padding: 0;
+            width: auto;
+            margin: 0 0 1em 0;
+        }
+
         .responsivecolumns & {
             background-color: transparent;
             padding: 0;
             width: auto;
             margin: 0 0 1em 0;
+        }
+    }
+
+    .fieldset--filters {
+        @media @mobile {
+            margin: 0;
+        }
+
+        .responsivecolumns & {
+            margin: 0;
         }
     }
     
@@ -97,6 +114,10 @@
         margin-bottom: 1em;
 
         @media @mobile {
+            display: block;
+        }
+
+        .responsivecolumns & {
             display: block;
         }
     }
