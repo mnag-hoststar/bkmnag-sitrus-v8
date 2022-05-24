@@ -36,7 +36,7 @@
 		font-weight: @font__companyname--font-weight;
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
-		word-break: normal;
+		word-break: break-word;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -53,6 +53,11 @@
 
 .template__navigation {
     flex-grow: 1;
+	min-width: 50%;
+
+	@media @tablet {
+		min-width: 100px;
+	}
 }
 
 .widget[data-widget-type="extendednavigation"] {
@@ -207,7 +212,7 @@
 	
     @media @tablet {
 		margin: 0;
-		padding: 10px 0 0;
+		padding: 0;
 		text-align: center;
 	    background-color: @color__header--background;
 	}
