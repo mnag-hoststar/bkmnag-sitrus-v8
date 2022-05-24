@@ -195,6 +195,19 @@
         .timestamp {
             margin: 2em 0 0;
             font-size: @font__p--font-size*0.8;
+            color: @color__p--text;
+    
+            .style--light & {
+                color: @color__p--text;
+            }
+        
+            .style--accent & {
+                color: @contrast--accent;
+            }
+        
+            .style--dark & {
+                color: @contrast--dark;
+            }
         }
     }
 }

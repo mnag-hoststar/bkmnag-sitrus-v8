@@ -16,7 +16,7 @@ a.contentgroup__link {
     cursor: pointer;
     position: relative;
     display: inline-block;
-    padding: 0 30px;
+    padding: 11px 30px;
     text-transform: uppercase;
     .appearance(none);
     .transition (all, 0.5s, ease);
@@ -29,14 +29,11 @@ a.contentgroup__link {
     letter-spacing: @font__button--letter-spacing;
     color: @color__button--text;
     -webkit-font-smoothing: antialiased;
+    word-break: break-word;
     
     .make-font-a-little-smaller(@font__button--font-size);
     .make-font-smaller(@font__button--font-size);
     .make-font-a-lot-smaller(@font__button--font-size);
-	
-	.make-line-height-a-little-smaller(@font__button--line-height);
-	.make-line-height-smaller(@font__button--line-height);
-	.make-line-height-a-lot-smaller(@font__button--line-height);
 
     .style--light & {
         background-color: @color__button--background;
