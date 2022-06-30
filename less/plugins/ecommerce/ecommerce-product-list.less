@@ -111,6 +111,7 @@
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
+        gap: 0.5em;
         margin-bottom: 1em;
 
         @media @mobile {
@@ -129,10 +130,12 @@
 
         @media @mobile {
             display: block;
+            margin-bottom: 1em;
         }
     
         .responsivecolumns & {
             display: block;
+            margin-bottom: 1em;
         }
 
         // First Form Group
@@ -141,15 +144,12 @@
             -webkit-flex: 1 1 auto;
             -ms-flex: 1 1 auto;
             flex: 1 1 auto;
-            padding-right: 0.5em;
 
             @media @mobile {
-                margin-bottom: 1em;
                 padding-right: 0;
             }
         
             .responsivecolumns & {
-                margin-bottom: 1em;
                 padding-right: 0;
             }
         }
